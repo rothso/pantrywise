@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "request": "launch",
+      "name": "Next.js: Dev (npm run dev)",
+      "command": "npm run dev",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env.local"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Chrome: Client (http://localhost:3000)",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true
+    },
+    {
+      "type": "node-terminal",
+      "request": "launch",
+      "name": "Next.js: Start (npm start)",
+      "command": "npm start",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env.local",
+      "preLaunchTask": "npm: build"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Next.js: Full‑stack Dev",
+      "configurations": [
+        "Next.js: Dev (npm run dev)",
+        "Chrome: Client (http://localhost:3000)",
+        "Next.js: Start (npm start)"
+      ]
+    }
+  ]
+}
