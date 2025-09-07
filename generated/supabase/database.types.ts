@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "12.2.12 (cd3cf9e)"
@@ -76,7 +76,7 @@ export type Database = {
         }
         Insert: {
           household_id?: number
-          name: string
+          name?: string
         }
         Update: {
           household_id?: number
@@ -86,27 +86,43 @@ export type Database = {
       }
       ingredient_prices: {
         Row: {
-          date_logged: string | null
-          id: number
+          created_at: string
           ingredient_id: number
           price: number
+          price_id: number
+          quantity: number
           store_id: number
+          unit_id: number
+          updated_at: string
         }
         Insert: {
-          date_logged?: string | null
-          id?: number
+          created_at?: string
           ingredient_id: number
           price: number
+          price_id?: number
+          quantity: number
           store_id: number
+          unit_id: number
+          updated_at?: string
         }
         Update: {
-          date_logged?: string | null
-          id?: number
+          created_at?: string
           ingredient_id?: number
           price?: number
+          price_id?: number
+          quantity?: number
           store_id?: number
+          unit_id?: number
+          updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "ingredient_prices_unit_id_fkey"
+            columns: ["unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "IngredientPrices_ingredient_id_fkey"
             columns: ["ingredient_id"]
@@ -125,22 +141,28 @@ export type Database = {
       }
       ingredients: {
         Row: {
-          category_id: number | null
+          category_id: number
+          created_at: string
           household_id: number
           ingredient_id: number
           name: string
+          updated_at: string
         }
         Insert: {
-          category_id?: number | null
+          category_id: number
+          created_at?: string
           household_id: number
           ingredient_id?: number
           name: string
+          updated_at?: string
         }
         Update: {
-          category_id?: number | null
+          category_id?: number
+          created_at?: string
           household_id?: number
           ingredient_id?: number
           name?: string
+          updated_at?: string
         }
         Relationships: [
           {
@@ -158,6 +180,21 @@ export type Database = {
             referencedColumns: ["household_id"]
           },
         ]
+      }
+      kv_store_cbc4596d: {
+        Row: {
+          key: string
+          value: Json
+        }
+        Insert: {
+          key: string
+          value: Json
+        }
+        Update: {
+          key?: string
+          value?: Json
+        }
+        Relationships: []
       }
       pantry: {
         Row: {
@@ -180,7 +217,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "pantry_household_id_fkey"
+            foreignKeyName: "Pantry_household_id_fkey"
             columns: ["household_id"]
             isOneToOne: false
             referencedRelation: "households"
@@ -265,33 +302,46 @@ export type Database = {
       }
       shopping_list: {
         Row: {
+          created_at: string
           household_id: number
-          id: number
           ingredient_id: number
-          purchased: boolean | null
+          item_id: number
+          purchased: boolean
           quantity: number
           store_id: number | null
-          unit: string | null
+          unit_id: number
+          updated_at: string
         }
         Insert: {
+          created_at?: string
           household_id: number
-          id?: number
           ingredient_id: number
-          purchased?: boolean | null
+          item_id?: number
+          purchased?: boolean
           quantity: number
           store_id?: number | null
-          unit?: string | null
+          unit_id: number
+          updated_at?: string
         }
         Update: {
+          created_at?: string
           household_id?: number
-          id?: number
           ingredient_id?: number
-          purchased?: boolean | null
+          item_id?: number
+          purchased?: boolean
           quantity?: number
           store_id?: number | null
-          unit?: string | null
+          unit_id?: number
+          updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "shopping_list_unit_id_fkey"
+            columns: ["unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "ShoppingList_household_id_fkey"
             columns: ["household_id"]
@@ -315,6 +365,33 @@ export type Database = {
           },
         ]
       }
+      units: {
+        Row: {
+          abbreviation: string
+          created_at: string
+          id: number
+          name_plural: string
+          name_singular: string
+          updated_at: string
+        }
+        Insert: {
+          abbreviation: string
+          created_at?: string
+          id?: number
+          name_plural: string
+          name_singular: string
+          updated_at?: string
+        }
+        Update: {
+          abbreviation?: string
+          created_at?: string
+          id?: number
+          name_plural?: string
+          name_singular?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       users: {
         Row: {
           created_at: string
@@ -333,7 +410,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "users_household_id_fkey"
+            foreignKeyName: "Users_household_id_fkey"
             columns: ["household_id"]
             isOneToOne: false
             referencedRelation: "households"
@@ -349,6 +426,10 @@ export type Database = {
       binary_quantize: {
         Args: { "": string } | { "": unknown }
         Returns: unknown
+      }
+      custom_access_token_hook: {
+        Args: { event: Json }
+        Returns: Json
       }
       halfvec_avg: {
         Args: { "": number[] }
