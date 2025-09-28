@@ -26,6 +26,7 @@ export default async function Page() {
       <p className="text-lg">Shopping List</p>
       <ul className="list-disc">
         {shoppingList.map((item) => (
+          // TODO: Display the expected price (client-side logic)
           <li key={item.itemId} className="flex flex-col gap-2">
             {item.ingredient.name}
             <ul className="list-disc pl-4 ml-4">

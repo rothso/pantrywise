@@ -3,7 +3,6 @@ import { createClient } from '@/utils/supabase/server';
 export async function getShoppingListByHousehold(householdId: number) {
   const supabase = await createClient();
 
-  // TODO: Join with ingredient_prices to get the price
   // TODO: Join with recipes to get the upcoming recipes (potentially)
   const { data, error } = await supabase
     .from('shopping_list')
@@ -14,6 +13,14 @@ export async function getShoppingListByHousehold(householdId: number) {
         name,
         category:category_id (
           name
+        ),
+        prices:ingredient_prices (
+          storeId:store_id,
+          price,
+          quantity,
+          unit:unit_id (
+            abbreviation
+          )
         )
       ),
       quantity,
@@ -22,6 +29,7 @@ export async function getShoppingListByHousehold(householdId: number) {
       ),
       purchased,
       store:store_id (
+        id:store_id,
         name,
         location
       ),
