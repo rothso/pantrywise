@@ -3,7 +3,6 @@ import { createClient } from '@/utils/supabase/server';
 export async function getShoppingListByHousehold(householdId: number) {
   const supabase = await createClient();
 
-  // TODO: Join with recipes to get the upcoming recipes (potentially)
   const { data, error } = await supabase
     .from('shopping_list')
     .select(
@@ -21,6 +20,9 @@ export async function getShoppingListByHousehold(householdId: number) {
           unit:unit_id (
             abbreviation
           )
+        ),
+        recipes (
+          name
         )
       ),
       quantity,
@@ -38,6 +40,7 @@ export async function getShoppingListByHousehold(householdId: number) {
     `,
     )
     .eq('household_id', householdId)
+    .eq('ingredient.recipes.planned', true)
     .order('created_at', { ascending: false });
 
   if (error) throw error;
