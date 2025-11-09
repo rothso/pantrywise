@@ -1,4 +1,4 @@
-import { getShoppingListByHousehold } from '@/repositories/shoppingList';
+import { getGroceryListByHousehold } from '@/repositories/groceryList';
 import { getHouseholdIdForUser } from '@/repositories/users';
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
@@ -16,17 +16,15 @@ export default async function Page() {
   }
 
   const householdId = await getHouseholdIdForUser(user.id); // TODO: Context?
-  const shoppingList = await getShoppingListByHousehold(householdId);
-  const shoppingListByStore = Map.groupBy(shoppingList, (item) => item.store);
+  const groceryList = await getGroceryListByHousehold(householdId);
+  const groceryListByStore = Map.groupBy(groceryList, (item) => item.store);
 
-  console.log(util.inspect(shoppingListByStore, { depth: null, colors: true }));
+  console.log(util.inspect(groceryListByStore, { depth: null, colors: true }));
 
   return (
     <div className="flex flex-col items-center justify-center h-screen gap-4 p-4 w-full">
-      {/* <h1 className="text-2xl font-bold">PantryWise</h1> */}
-      {/* <p className="text-lg">Shopping List</p> */}
       <ul className="list-disc">
-        {shoppingList.map((item) => (
+        {groceryList.map((item) => (
           // TODO: Display the expected price (client-side logic)
           <li key={item.itemId} className="flex flex-col gap-2">
             {item.ingredient.name}

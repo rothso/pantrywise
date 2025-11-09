@@ -300,7 +300,7 @@ export type Database = {
           },
         ]
       }
-      shopping_list: {
+      grocery_list: {
         Row: {
           created_at: string
           household_id: number
@@ -336,28 +336,28 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "shopping_list_unit_id_fkey"
+            foreignKeyName: "grocery_list_unit_id_fkey"
             columns: ["unit_id"]
             isOneToOne: false
             referencedRelation: "units"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "ShoppingList_household_id_fkey"
+            foreignKeyName: "grocery_list_household_id_fkey"
             columns: ["household_id"]
             isOneToOne: false
             referencedRelation: "households"
             referencedColumns: ["household_id"]
           },
           {
-            foreignKeyName: "ShoppingList_ingredient_id_fkey"
+            foreignKeyName: "grocery_list_ingredient_id_fkey"
             columns: ["ingredient_id"]
             isOneToOne: false
             referencedRelation: "ingredients"
             referencedColumns: ["ingredient_id"]
           },
           {
-            foreignKeyName: "ShoppingList_store_id_fkey"
+            foreignKeyName: "grcery_list_store_id_fkey"
             columns: ["store_id"]
             isOneToOne: false
             referencedRelation: "grocery_stores"

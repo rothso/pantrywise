@@ -1,10 +1,10 @@
 import { createClient } from '@/utils/supabase/server';
 
-export async function getShoppingListByHousehold(householdId: number) {
+export async function getGroceryListByHousehold(householdId: number) {
   const supabase = await createClient();
 
   const { data, error } = await supabase
-    .from('shopping_list')
+    .from('grocery_list')
     .select(
       `
       itemId:item_id,
