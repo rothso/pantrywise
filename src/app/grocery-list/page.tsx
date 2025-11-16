@@ -1,3 +1,5 @@
+import GroceryList from '@/components/grocery-list';
+import Container from '@/components/layout/container';
 import { getGroceryListByHousehold } from '@/repositories/groceryList';
 import { getHouseholdIdForUser } from '@/repositories/users';
 import { createClient } from '@/utils/supabase/server';
@@ -17,27 +19,16 @@ export default async function Page() {
 
   const householdId = await getHouseholdIdForUser(user.id); // TODO: Context?
   const groceryList = await getGroceryListByHousehold(householdId);
+
+  // TODO: Map units to their respective labels before sending to UI component
   const groceryListByStore = Map.groupBy(groceryList, (item) => item.store);
 
   console.log(util.inspect(groceryListByStore, { depth: null, colors: true }));
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-4 p-4 w-full">
-      <ul className="list-disc">
-        {groceryList.map((item) => (
-          // TODO: Display the expected price (client-side logic)
-          <li key={item.itemId} className="flex flex-col gap-2">
-            {item.ingredient.name}
-            <ul className="list-disc pl-4 ml-4">
-              {item.ingredient.name}
-              {item.quantity} {item.unit.abbreviation}
-              {item.store?.name ?? 'No store'}
-              {item.createdAt}
-              {item.updatedAt}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </div>
+    // TODO: Standardize container width
+    <Container className="w-[768px]">
+      <GroceryList groceryListByStore={groceryListByStore} />
+    </Container>
   );
 }

@@ -17,18 +17,14 @@ export async function getGroceryListByHousehold(householdId: number) {
           storeId:store_id,
           price,
           quantity,
-          unit:unit_id (
-            abbreviation
-          )
+          unitId:unit_id
         ),
         recipes (
           name
         )
       ),
       quantity,
-      unit:unit_id (
-        abbreviation
-      ),
+      unitId:unit_id,
       purchased,
       store:store_id (
         id:store_id,
