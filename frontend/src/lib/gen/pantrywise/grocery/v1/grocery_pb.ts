@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file pantrywise/grocery/v1/grocery.proto.
  */
 export const file_pantrywise_grocery_v1_grocery: GenFile = /*@__PURE__*/
-  fileDesc("CiNwYW50cnl3aXNlL2dyb2NlcnkvdjEvZ3JvY2VyeS5wcm90bxIVcGFudHJ5d2lzZS5ncm9jZXJ5LnYxInkKCUhvdXNlaG9sZBIMCgRuYW1lGAEgASgJEi4KCmNyZWF0ZWRfYXQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCnVwZGF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIoUBCgRGb29kEg8KB2Zvb2RfaWQYASABKAkSDAoEbmFtZRgCIAEoCRIuCgpjcmVhdGVkX2F0GAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIuCgp1cGRhdGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCL1AQoLR3JvY2VyeUl0ZW0SDwoHaXRlbV9pZBgBIAEoCRIPCgdmb29kX2lkGAIgASgJEhAKCHF1YW50aXR5GAMgASgBEgwKBHVuaXQYBCABKAkSMQoNcHVyY2hhc2VfZGF0ZRgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKY3JlYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEQoJZm9vZF9uYW1lGAggASgJIr8BCgtHcm9jZXJ5TGlzdBIPCgdsaXN0X2lkGAEgASgJEgwKBG5hbWUYAiABKAkSLgoKY3JlYXRlZF9hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMQoFaXRlbXMYBSADKAsyIi5wYW50cnl3aXNlLmdyb2NlcnkudjEuR3JvY2VyeUl0ZW0izQEKEFJlY2lwZUluZ3JlZGllbnQSFQoNaW5ncmVkaWVudF9pZBgBIAEoCRIRCglyZWNpcGVfaWQYAiABKAkSDwoHZm9vZF9pZBgDIAEoCRIQCghxdWFudGl0eRgEIAEoARIMCgR1bml0GAUgASgJEi4KCmNyZWF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCnVwZGF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIvkBCgZSZWNpcGUSEQoJcmVjaXBlX2lkGAEgASgJEgwKBG5hbWUYAiABKAkSMAoMcGxhbm5lZF9kYXRlGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIuCgpjcmVhdGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIuCgp1cGRhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI8CgtpbmdyZWRpZW50cxgGIAMoCzInLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5SZWNpcGVJbmdyZWRpZW50IhUKE0dldEhvdXNlaG9sZFJlcXVlc3QiSwoUR2V0SG91c2Vob2xkUmVzcG9uc2USMwoJaG91c2Vob2xkGAEgASgLMiAucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkhvdXNlaG9sZCISChBMaXN0Rm9vZHNSZXF1ZXN0Ij8KEUxpc3RGb29kc1Jlc3BvbnNlEioKBWZvb2RzGAEgAygLMhsucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkZvb2QiGQoXTGlzdEdyb2NlcnlMaXN0c1JlcXVlc3QiVQoYTGlzdEdyb2NlcnlMaXN0c1Jlc3BvbnNlEjkKDWdyb2NlcnlfbGlzdHMYASADKAsyIi5wYW50cnl3aXNlLmdyb2NlcnkudjEuR3JvY2VyeUxpc3QiKAoVR2V0R3JvY2VyeUxpc3RSZXF1ZXN0Eg8KB2xpc3RfaWQYASABKAkiUgoWR2V0R3JvY2VyeUxpc3RSZXNwb25zZRI4Cgxncm9jZXJ5X2xpc3QYASABKAsyIi5wYW50cnl3aXNlLmdyb2NlcnkudjEuR3JvY2VyeUxpc3QiKAoYQ3JlYXRlR3JvY2VyeUxpc3RSZXF1ZXN0EgwKBG5hbWUYASABKAkiVQoZQ3JlYXRlR3JvY2VyeUxpc3RSZXNwb25zZRI4Cgxncm9jZXJ5X2xpc3QYASABKAsyIi5wYW50cnl3aXNlLmdyb2NlcnkudjEuR3JvY2VyeUxpc3QijAEKFUFkZEdyb2NlcnlJdGVtUmVxdWVzdBIPCgdsaXN0X2lkGAEgASgJEg8KB2Zvb2RfaWQYAiABKAkSEAoIcXVhbnRpdHkYAyABKAESDAoEdW5pdBgEIAEoCRIxCg1wdXJjaGFzZV9kYXRlGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJSChZBZGRHcm9jZXJ5SXRlbVJlc3BvbnNlEjgKDGdyb2NlcnlfaXRlbRgBIAEoCzIiLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5Hcm9jZXJ5SXRlbSIUChJMaXN0UmVjaXBlc1JlcXVlc3QiRQoTTGlzdFJlY2lwZXNSZXNwb25zZRIuCgdyZWNpcGVzGAEgAygLMh0ucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLlJlY2lwZTKjBgoOR3JvY2VyeVNlcnZpY2USbAoMR2V0SG91c2Vob2xkEioucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkdldEhvdXNlaG9sZFJlcXVlc3QaKy5wYW50cnl3aXNlLmdyb2NlcnkudjEuR2V0SG91c2Vob2xkUmVzcG9uc2UiA5ACARJjCglMaXN0Rm9vZHMSJy5wYW50cnl3aXNlLmdyb2NlcnkudjEuTGlzdEZvb2RzUmVxdWVzdBooLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5MaXN0Rm9vZHNSZXNwb25zZSIDkAIBEngKEExpc3RHcm9jZXJ5TGlzdHMSLi5wYW50cnl3aXNlLmdyb2NlcnkudjEuTGlzdEdyb2NlcnlMaXN0c1JlcXVlc3QaLy5wYW50cnl3aXNlLmdyb2NlcnkudjEuTGlzdEdyb2NlcnlMaXN0c1Jlc3BvbnNlIgOQAgEScgoOR2V0R3JvY2VyeUxpc3QSLC5wYW50cnl3aXNlLmdyb2NlcnkudjEuR2V0R3JvY2VyeUxpc3RSZXF1ZXN0Gi0ucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkdldEdyb2NlcnlMaXN0UmVzcG9uc2UiA5ACARJ2ChFDcmVhdGVHcm9jZXJ5TGlzdBIvLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5DcmVhdGVHcm9jZXJ5TGlzdFJlcXVlc3QaMC5wYW50cnl3aXNlLmdyb2NlcnkudjEuQ3JlYXRlR3JvY2VyeUxpc3RSZXNwb25zZRJtCg5BZGRHcm9jZXJ5SXRlbRIsLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5BZGRHcm9jZXJ5SXRlbVJlcXVlc3QaLS5wYW50cnl3aXNlLmdyb2NlcnkudjEuQWRkR3JvY2VyeUl0ZW1SZXNwb25zZRJpCgtMaXN0UmVjaXBlcxIpLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5MaXN0UmVjaXBlc1JlcXVlc3QaKi5wYW50cnl3aXNlLmdyb2NlcnkudjEuTGlzdFJlY2lwZXNSZXNwb25zZSIDkAIBQjlaN3BhbnRyeXdpc2UvaW50ZXJuYWwvZ2VuL3BhbnRyeXdpc2UvZ3JvY2VyeS92MTtncm9jZXJ5djFiBnByb3RvMw", [file_google_protobuf_timestamp]);
+  fileDesc("CiNwYW50cnl3aXNlL2dyb2NlcnkvdjEvZ3JvY2VyeS5wcm90bxIVcGFudHJ5d2lzZS5ncm9jZXJ5LnYxInkKCUhvdXNlaG9sZBIMCgRuYW1lGAEgASgJEi4KCmNyZWF0ZWRfYXQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCnVwZGF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIoUBCgRGb29kEg8KB2Zvb2RfaWQYASABKAkSDAoEbmFtZRgCIAEoCRIuCgpjcmVhdGVkX2F0GAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIuCgp1cGRhdGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCL1AQoLR3JvY2VyeUl0ZW0SDwoHaXRlbV9pZBgBIAEoCRIPCgdmb29kX2lkGAIgASgJEhAKCHF1YW50aXR5GAMgASgBEgwKBHVuaXQYBCABKAkSMQoNcHVyY2hhc2VfZGF0ZRgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKY3JlYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEQoJZm9vZF9uYW1lGAggASgJIsMBCgtHcm9jZXJ5TGlzdBIPCgdsaXN0X2lkGAEgASgJEgwKBG5hbWUYAiABKAkSLgoKY3JlYXRlZF9hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASNQoFaXRlbXMYBSADKAsyJi5wYW50cnl3aXNlLmdyb2NlcnkudjEuR3JvY2VyeUxpc3RJdGVtIsMCCg9Hcm9jZXJ5TGlzdEl0ZW0SDwoHaXRlbV9pZBgBIAEoCRIPCgdmb29kX2lkGAIgASgJEhAKCHF1YW50aXR5GAMgASgBEgwKBHVuaXQYBCABKAkSMQoNcHVyY2hhc2VfZGF0ZRgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKY3JlYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEQoJZm9vZF9uYW1lGAggASgJEkgKD3JlbGF0ZWRfcmVjaXBlcxgJIAMoCzIvLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5Hcm9jZXJ5TGlzdFJlbGF0ZWRSZWNpcGUibQoYR3JvY2VyeUxpc3RSZWxhdGVkUmVjaXBlEhEKCXJlY2lwZV9pZBgBIAEoCRIMCgRuYW1lGAIgASgJEjAKDHBsYW5uZWRfZGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiFQoTR2V0SG91c2Vob2xkUmVxdWVzdCJLChRHZXRIb3VzZWhvbGRSZXNwb25zZRIzCglob3VzZWhvbGQYASABKAsyIC5wYW50cnl3aXNlLmdyb2NlcnkudjEuSG91c2Vob2xkIhIKEExpc3RGb29kc1JlcXVlc3QiPwoRTGlzdEZvb2RzUmVzcG9uc2USKgoFZm9vZHMYASADKAsyGy5wYW50cnl3aXNlLmdyb2NlcnkudjEuRm9vZCIZChdMaXN0R3JvY2VyeUxpc3RzUmVxdWVzdCJVChhMaXN0R3JvY2VyeUxpc3RzUmVzcG9uc2USOQoNZ3JvY2VyeV9saXN0cxgBIAMoCzIiLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5Hcm9jZXJ5TGlzdCIoChVHZXRHcm9jZXJ5TGlzdFJlcXVlc3QSDwoHbGlzdF9pZBgBIAEoCSJSChZHZXRHcm9jZXJ5TGlzdFJlc3BvbnNlEjgKDGdyb2NlcnlfbGlzdBgBIAEoCzIiLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5Hcm9jZXJ5TGlzdCIoChhDcmVhdGVHcm9jZXJ5TGlzdFJlcXVlc3QSDAoEbmFtZRgBIAEoCSJVChlDcmVhdGVHcm9jZXJ5TGlzdFJlc3BvbnNlEjgKDGdyb2NlcnlfbGlzdBgBIAEoCzIiLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5Hcm9jZXJ5TGlzdCKMAQoVQWRkR3JvY2VyeUl0ZW1SZXF1ZXN0Eg8KB2xpc3RfaWQYASABKAkSDwoHZm9vZF9pZBgCIAEoCRIQCghxdWFudGl0eRgDIAEoARIMCgR1bml0GAQgASgJEjEKDXB1cmNoYXNlX2RhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIlIKFkFkZEdyb2NlcnlJdGVtUmVzcG9uc2USOAoMZ3JvY2VyeV9pdGVtGAEgASgLMiIucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkdyb2NlcnlJdGVtIhQKEkxpc3RSZWNpcGVzUmVxdWVzdCJXChNMaXN0UmVjaXBlc1Jlc3BvbnNlEkAKB3JlY2lwZXMYASADKAsyLy5wYW50cnl3aXNlLmdyb2NlcnkudjEuR3JvY2VyeUxpc3RSZWxhdGVkUmVjaXBlMqMGCg5Hcm9jZXJ5U2VydmljZRJsCgxHZXRIb3VzZWhvbGQSKi5wYW50cnl3aXNlLmdyb2NlcnkudjEuR2V0SG91c2Vob2xkUmVxdWVzdBorLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5HZXRIb3VzZWhvbGRSZXNwb25zZSIDkAIBEmMKCUxpc3RGb29kcxInLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5MaXN0Rm9vZHNSZXF1ZXN0GigucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkxpc3RGb29kc1Jlc3BvbnNlIgOQAgESeAoQTGlzdEdyb2NlcnlMaXN0cxIuLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5MaXN0R3JvY2VyeUxpc3RzUmVxdWVzdBovLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5MaXN0R3JvY2VyeUxpc3RzUmVzcG9uc2UiA5ACARJyCg5HZXRHcm9jZXJ5TGlzdBIsLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5HZXRHcm9jZXJ5TGlzdFJlcXVlc3QaLS5wYW50cnl3aXNlLmdyb2NlcnkudjEuR2V0R3JvY2VyeUxpc3RSZXNwb25zZSIDkAIBEnYKEUNyZWF0ZUdyb2NlcnlMaXN0Ei8ucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkNyZWF0ZUdyb2NlcnlMaXN0UmVxdWVzdBowLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5DcmVhdGVHcm9jZXJ5TGlzdFJlc3BvbnNlEm0KDkFkZEdyb2NlcnlJdGVtEiwucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkFkZEdyb2NlcnlJdGVtUmVxdWVzdBotLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5BZGRHcm9jZXJ5SXRlbVJlc3BvbnNlEmkKC0xpc3RSZWNpcGVzEikucGFudHJ5d2lzZS5ncm9jZXJ5LnYxLkxpc3RSZWNpcGVzUmVxdWVzdBoqLnBhbnRyeXdpc2UuZ3JvY2VyeS52MS5MaXN0UmVjaXBlc1Jlc3BvbnNlIgOQAgFCOVo3cGFudHJ5d2lzZS9pbnRlcm5hbC9nZW4vcGFudHJ5d2lzZS9ncm9jZXJ5L3YxO2dyb2Nlcnl2MWIGcHJvdG8z", [file_google_protobuf_timestamp]);
 
 /**
  * @generated from message pantrywise.grocery.v1.Household
@@ -150,9 +150,9 @@ export type GroceryList = Message<"pantrywise.grocery.v1.GroceryList"> & {
   updatedAt?: Timestamp | undefined;
 
   /**
-   * @generated from field: repeated pantrywise.grocery.v1.GroceryItem items = 5;
+   * @generated from field: repeated pantrywise.grocery.v1.GroceryListItem items = 5;
    */
-  items: GroceryItem[];
+  items: GroceryListItem[];
 };
 
 /**
@@ -163,33 +163,33 @@ export const GroceryListSchema: GenMessage<GroceryList> = /*@__PURE__*/
   messageDesc(file_pantrywise_grocery_v1_grocery, 3);
 
 /**
- * @generated from message pantrywise.grocery.v1.RecipeIngredient
+ * @generated from message pantrywise.grocery.v1.GroceryListItem
  */
-export type RecipeIngredient = Message<"pantrywise.grocery.v1.RecipeIngredient"> & {
+export type GroceryListItem = Message<"pantrywise.grocery.v1.GroceryListItem"> & {
   /**
-   * @generated from field: string ingredient_id = 1;
+   * @generated from field: string item_id = 1;
    */
-  ingredientId: string;
+  itemId: string;
 
   /**
-   * @generated from field: string recipe_id = 2;
-   */
-  recipeId: string;
-
-  /**
-   * @generated from field: string food_id = 3;
+   * @generated from field: string food_id = 2;
    */
   foodId: string;
 
   /**
-   * @generated from field: double quantity = 4;
+   * @generated from field: double quantity = 3;
    */
   quantity: number;
 
   /**
-   * @generated from field: string unit = 5;
+   * @generated from field: string unit = 4;
    */
   unit: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp purchase_date = 5;
+   */
+  purchaseDate?: Timestamp | undefined;
 
   /**
    * @generated from field: google.protobuf.Timestamp created_at = 6;
@@ -200,19 +200,29 @@ export type RecipeIngredient = Message<"pantrywise.grocery.v1.RecipeIngredient">
    * @generated from field: google.protobuf.Timestamp updated_at = 7;
    */
   updatedAt?: Timestamp | undefined;
+
+  /**
+   * @generated from field: string food_name = 8;
+   */
+  foodName: string;
+
+  /**
+   * @generated from field: repeated pantrywise.grocery.v1.GroceryListRelatedRecipe related_recipes = 9;
+   */
+  relatedRecipes: GroceryListRelatedRecipe[];
 };
 
 /**
- * Describes the message pantrywise.grocery.v1.RecipeIngredient.
- * Use `create(RecipeIngredientSchema)` to create a new message.
+ * Describes the message pantrywise.grocery.v1.GroceryListItem.
+ * Use `create(GroceryListItemSchema)` to create a new message.
  */
-export const RecipeIngredientSchema: GenMessage<RecipeIngredient> = /*@__PURE__*/
+export const GroceryListItemSchema: GenMessage<GroceryListItem> = /*@__PURE__*/
   messageDesc(file_pantrywise_grocery_v1_grocery, 4);
 
 /**
- * @generated from message pantrywise.grocery.v1.Recipe
+ * @generated from message pantrywise.grocery.v1.GroceryListRelatedRecipe
  */
-export type Recipe = Message<"pantrywise.grocery.v1.Recipe"> & {
+export type GroceryListRelatedRecipe = Message<"pantrywise.grocery.v1.GroceryListRelatedRecipe"> & {
   /**
    * @generated from field: string recipe_id = 1;
    */
@@ -227,28 +237,13 @@ export type Recipe = Message<"pantrywise.grocery.v1.Recipe"> & {
    * @generated from field: google.protobuf.Timestamp planned_date = 3;
    */
   plannedDate?: Timestamp | undefined;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 4;
-   */
-  createdAt?: Timestamp | undefined;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp updated_at = 5;
-   */
-  updatedAt?: Timestamp | undefined;
-
-  /**
-   * @generated from field: repeated pantrywise.grocery.v1.RecipeIngredient ingredients = 6;
-   */
-  ingredients: RecipeIngredient[];
 };
 
 /**
- * Describes the message pantrywise.grocery.v1.Recipe.
- * Use `create(RecipeSchema)` to create a new message.
+ * Describes the message pantrywise.grocery.v1.GroceryListRelatedRecipe.
+ * Use `create(GroceryListRelatedRecipeSchema)` to create a new message.
  */
-export const RecipeSchema: GenMessage<Recipe> = /*@__PURE__*/
+export const GroceryListRelatedRecipeSchema: GenMessage<GroceryListRelatedRecipe> = /*@__PURE__*/
   messageDesc(file_pantrywise_grocery_v1_grocery, 5);
 
 /**
@@ -481,9 +476,9 @@ export const ListRecipesRequestSchema: GenMessage<ListRecipesRequest> = /*@__PUR
  */
 export type ListRecipesResponse = Message<"pantrywise.grocery.v1.ListRecipesResponse"> & {
   /**
-   * @generated from field: repeated pantrywise.grocery.v1.Recipe recipes = 1;
+   * @generated from field: repeated pantrywise.grocery.v1.GroceryListRelatedRecipe recipes = 1;
    */
-  recipes: Recipe[];
+  recipes: GroceryListRelatedRecipe[];
 };
 
 /**

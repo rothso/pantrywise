@@ -256,7 +256,7 @@ type GroceryList struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	Items         []*GroceryItem         `protobuf:"bytes,5,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*GroceryListItem     `protobuf:"bytes,5,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -319,40 +319,42 @@ func (x *GroceryList) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *GroceryList) GetItems() []*GroceryItem {
+func (x *GroceryList) GetItems() []*GroceryListItem {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-type RecipeIngredient struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	IngredientId  string                 `protobuf:"bytes,1,opt,name=ingredient_id,json=ingredientId,proto3" json:"ingredient_id,omitempty"`
-	RecipeId      string                 `protobuf:"bytes,2,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
-	FoodId        string                 `protobuf:"bytes,3,opt,name=food_id,json=foodId,proto3" json:"food_id,omitempty"`
-	Quantity      float64                `protobuf:"fixed64,4,opt,name=quantity,proto3" json:"quantity,omitempty"`
-	Unit          string                 `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+type GroceryListItem struct {
+	state          protoimpl.MessageState      `protogen:"open.v1"`
+	ItemId         string                      `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	FoodId         string                      `protobuf:"bytes,2,opt,name=food_id,json=foodId,proto3" json:"food_id,omitempty"`
+	Quantity       float64                     `protobuf:"fixed64,3,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	Unit           string                      `protobuf:"bytes,4,opt,name=unit,proto3" json:"unit,omitempty"`
+	PurchaseDate   *timestamppb.Timestamp      `protobuf:"bytes,5,opt,name=purchase_date,json=purchaseDate,proto3" json:"purchase_date,omitempty"`
+	CreatedAt      *timestamppb.Timestamp      `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt      *timestamppb.Timestamp      `protobuf:"bytes,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	FoodName       string                      `protobuf:"bytes,8,opt,name=food_name,json=foodName,proto3" json:"food_name,omitempty"`
+	RelatedRecipes []*GroceryListRelatedRecipe `protobuf:"bytes,9,rep,name=related_recipes,json=relatedRecipes,proto3" json:"related_recipes,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
-func (x *RecipeIngredient) Reset() {
-	*x = RecipeIngredient{}
+func (x *GroceryListItem) Reset() {
+	*x = GroceryListItem{}
 	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *RecipeIngredient) String() string {
+func (x *GroceryListItem) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecipeIngredient) ProtoMessage() {}
+func (*GroceryListItem) ProtoMessage() {}
 
-func (x *RecipeIngredient) ProtoReflect() protoreflect.Message {
+func (x *GroceryListItem) ProtoReflect() protoreflect.Message {
 	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -364,86 +366,97 @@ func (x *RecipeIngredient) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecipeIngredient.ProtoReflect.Descriptor instead.
-func (*RecipeIngredient) Descriptor() ([]byte, []int) {
+// Deprecated: Use GroceryListItem.ProtoReflect.Descriptor instead.
+func (*GroceryListItem) Descriptor() ([]byte, []int) {
 	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *RecipeIngredient) GetIngredientId() string {
+func (x *GroceryListItem) GetItemId() string {
 	if x != nil {
-		return x.IngredientId
+		return x.ItemId
 	}
 	return ""
 }
 
-func (x *RecipeIngredient) GetRecipeId() string {
-	if x != nil {
-		return x.RecipeId
-	}
-	return ""
-}
-
-func (x *RecipeIngredient) GetFoodId() string {
+func (x *GroceryListItem) GetFoodId() string {
 	if x != nil {
 		return x.FoodId
 	}
 	return ""
 }
 
-func (x *RecipeIngredient) GetQuantity() float64 {
+func (x *GroceryListItem) GetQuantity() float64 {
 	if x != nil {
 		return x.Quantity
 	}
 	return 0
 }
 
-func (x *RecipeIngredient) GetUnit() string {
+func (x *GroceryListItem) GetUnit() string {
 	if x != nil {
 		return x.Unit
 	}
 	return ""
 }
 
-func (x *RecipeIngredient) GetCreatedAt() *timestamppb.Timestamp {
+func (x *GroceryListItem) GetPurchaseDate() *timestamppb.Timestamp {
+	if x != nil {
+		return x.PurchaseDate
+	}
+	return nil
+}
+
+func (x *GroceryListItem) GetCreatedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return nil
 }
 
-func (x *RecipeIngredient) GetUpdatedAt() *timestamppb.Timestamp {
+func (x *GroceryListItem) GetUpdatedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.UpdatedAt
 	}
 	return nil
 }
 
-type Recipe struct {
+func (x *GroceryListItem) GetFoodName() string {
+	if x != nil {
+		return x.FoodName
+	}
+	return ""
+}
+
+func (x *GroceryListItem) GetRelatedRecipes() []*GroceryListRelatedRecipe {
+	if x != nil {
+		return x.RelatedRecipes
+	}
+	return nil
+}
+
+type GroceryListRelatedRecipe struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RecipeId      string                 `protobuf:"bytes,1,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	PlannedDate   *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=planned_date,json=plannedDate,proto3" json:"planned_date,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	Ingredients   []*RecipeIngredient    `protobuf:"bytes,6,rep,name=ingredients,proto3" json:"ingredients,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Recipe) Reset() {
-	*x = Recipe{}
+func (x *GroceryListRelatedRecipe) Reset() {
+	*x = GroceryListRelatedRecipe{}
 	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Recipe) String() string {
+func (x *GroceryListRelatedRecipe) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Recipe) ProtoMessage() {}
+func (*GroceryListRelatedRecipe) ProtoMessage() {}
 
-func (x *Recipe) ProtoReflect() protoreflect.Message {
+func (x *GroceryListRelatedRecipe) ProtoReflect() protoreflect.Message {
 	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -455,49 +468,28 @@ func (x *Recipe) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Recipe.ProtoReflect.Descriptor instead.
-func (*Recipe) Descriptor() ([]byte, []int) {
+// Deprecated: Use GroceryListRelatedRecipe.ProtoReflect.Descriptor instead.
+func (*GroceryListRelatedRecipe) Descriptor() ([]byte, []int) {
 	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *Recipe) GetRecipeId() string {
+func (x *GroceryListRelatedRecipe) GetRecipeId() string {
 	if x != nil {
 		return x.RecipeId
 	}
 	return ""
 }
 
-func (x *Recipe) GetName() string {
+func (x *GroceryListRelatedRecipe) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *Recipe) GetPlannedDate() *timestamppb.Timestamp {
+func (x *GroceryListRelatedRecipe) GetPlannedDate() *timestamppb.Timestamp {
 	if x != nil {
 		return x.PlannedDate
-	}
-	return nil
-}
-
-func (x *Recipe) GetCreatedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.CreatedAt
-	}
-	return nil
-}
-
-func (x *Recipe) GetUpdatedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.UpdatedAt
-	}
-	return nil
-}
-
-func (x *Recipe) GetIngredients() []*RecipeIngredient {
-	if x != nil {
-		return x.Ingredients
 	}
 	return nil
 }
@@ -1075,8 +1067,8 @@ func (*ListRecipesRequest) Descriptor() ([]byte, []int) {
 }
 
 type ListRecipesResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Recipes       []*Recipe              `protobuf:"bytes,1,rep,name=recipes,proto3" json:"recipes,omitempty"`
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Recipes       []*GroceryListRelatedRecipe `protobuf:"bytes,1,rep,name=recipes,proto3" json:"recipes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1111,7 +1103,7 @@ func (*ListRecipesResponse) Descriptor() ([]byte, []int) {
 	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{19}
 }
 
-func (x *ListRecipesResponse) GetRecipes() []*Recipe {
+func (x *ListRecipesResponse) GetRecipes() []*GroceryListRelatedRecipe {
 	if x != nil {
 		return x.Recipes
 	}
@@ -1146,34 +1138,31 @@ const file_pantrywise_grocery_v1_grocery_proto_rawDesc = "" +
 	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
 	"updated_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12\x1b\n" +
-	"\tfood_name\x18\b \x01(\tR\bfoodName\"\xea\x01\n" +
+	"\tfood_name\x18\b \x01(\tR\bfoodName\"\xee\x01\n" +
 	"\vGroceryList\x12\x17\n" +
 	"\alist_id\x18\x01 \x01(\tR\x06listId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x129\n" +
 	"\n" +
 	"created_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x128\n" +
-	"\x05items\x18\x05 \x03(\v2\".pantrywise.grocery.v1.GroceryItemR\x05items\"\x93\x02\n" +
-	"\x10RecipeIngredient\x12#\n" +
-	"\ringredient_id\x18\x01 \x01(\tR\fingredientId\x12\x1b\n" +
-	"\trecipe_id\x18\x02 \x01(\tR\brecipeId\x12\x17\n" +
-	"\afood_id\x18\x03 \x01(\tR\x06foodId\x12\x1a\n" +
-	"\bquantity\x18\x04 \x01(\x01R\bquantity\x12\x12\n" +
-	"\x04unit\x18\x05 \x01(\tR\x04unit\x129\n" +
+	"updated_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12<\n" +
+	"\x05items\x18\x05 \x03(\v2&.pantrywise.grocery.v1.GroceryListItemR\x05items\"\xa1\x03\n" +
+	"\x0fGroceryListItem\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x17\n" +
+	"\afood_id\x18\x02 \x01(\tR\x06foodId\x12\x1a\n" +
+	"\bquantity\x18\x03 \x01(\x01R\bquantity\x12\x12\n" +
+	"\x04unit\x18\x04 \x01(\tR\x04unit\x12?\n" +
+	"\rpurchase_date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\fpurchaseDate\x129\n" +
 	"\n" +
 	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xb9\x02\n" +
-	"\x06Recipe\x12\x1b\n" +
+	"updated_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12\x1b\n" +
+	"\tfood_name\x18\b \x01(\tR\bfoodName\x12X\n" +
+	"\x0frelated_recipes\x18\t \x03(\v2/.pantrywise.grocery.v1.GroceryListRelatedRecipeR\x0erelatedRecipes\"\x8a\x01\n" +
+	"\x18GroceryListRelatedRecipe\x12\x1b\n" +
 	"\trecipe_id\x18\x01 \x01(\tR\brecipeId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12=\n" +
-	"\fplanned_date\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\vplannedDate\x129\n" +
-	"\n" +
-	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
-	"\n" +
-	"updated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12I\n" +
-	"\vingredients\x18\x06 \x03(\v2'.pantrywise.grocery.v1.RecipeIngredientR\vingredients\"\x15\n" +
+	"\fplanned_date\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\vplannedDate\"\x15\n" +
 	"\x13GetHouseholdRequest\"V\n" +
 	"\x14GetHouseholdResponse\x12>\n" +
 	"\thousehold\x18\x01 \x01(\v2 .pantrywise.grocery.v1.HouseholdR\thousehold\"\x12\n" +
@@ -1199,9 +1188,9 @@ const file_pantrywise_grocery_v1_grocery_proto_rawDesc = "" +
 	"\rpurchase_date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\fpurchaseDate\"_\n" +
 	"\x16AddGroceryItemResponse\x12E\n" +
 	"\fgrocery_item\x18\x01 \x01(\v2\".pantrywise.grocery.v1.GroceryItemR\vgroceryItem\"\x14\n" +
-	"\x12ListRecipesRequest\"N\n" +
-	"\x13ListRecipesResponse\x127\n" +
-	"\arecipes\x18\x01 \x03(\v2\x1d.pantrywise.grocery.v1.RecipeR\arecipes2\xa3\x06\n" +
+	"\x12ListRecipesRequest\"`\n" +
+	"\x13ListRecipesResponse\x12I\n" +
+	"\arecipes\x18\x01 \x03(\v2/.pantrywise.grocery.v1.GroceryListRelatedRecipeR\arecipes2\xa3\x06\n" +
 	"\x0eGroceryService\x12l\n" +
 	"\fGetHousehold\x12*.pantrywise.grocery.v1.GetHouseholdRequest\x1a+.pantrywise.grocery.v1.GetHouseholdResponse\"\x03\x90\x02\x01\x12c\n" +
 	"\tListFoods\x12'.pantrywise.grocery.v1.ListFoodsRequest\x1a(.pantrywise.grocery.v1.ListFoodsResponse\"\x03\x90\x02\x01\x12x\n" +
@@ -1229,8 +1218,8 @@ var file_pantrywise_grocery_v1_grocery_proto_goTypes = []any{
 	(*Food)(nil),                      // 1: pantrywise.grocery.v1.Food
 	(*GroceryItem)(nil),               // 2: pantrywise.grocery.v1.GroceryItem
 	(*GroceryList)(nil),               // 3: pantrywise.grocery.v1.GroceryList
-	(*RecipeIngredient)(nil),          // 4: pantrywise.grocery.v1.RecipeIngredient
-	(*Recipe)(nil),                    // 5: pantrywise.grocery.v1.Recipe
+	(*GroceryListItem)(nil),           // 4: pantrywise.grocery.v1.GroceryListItem
+	(*GroceryListRelatedRecipe)(nil),  // 5: pantrywise.grocery.v1.GroceryListRelatedRecipe
 	(*GetHouseholdRequest)(nil),       // 6: pantrywise.grocery.v1.GetHouseholdRequest
 	(*GetHouseholdResponse)(nil),      // 7: pantrywise.grocery.v1.GetHouseholdResponse
 	(*ListFoodsRequest)(nil),          // 8: pantrywise.grocery.v1.ListFoodsRequest
@@ -1257,40 +1246,39 @@ var file_pantrywise_grocery_v1_grocery_proto_depIdxs = []int32{
 	20, // 6: pantrywise.grocery.v1.GroceryItem.updated_at:type_name -> google.protobuf.Timestamp
 	20, // 7: pantrywise.grocery.v1.GroceryList.created_at:type_name -> google.protobuf.Timestamp
 	20, // 8: pantrywise.grocery.v1.GroceryList.updated_at:type_name -> google.protobuf.Timestamp
-	2,  // 9: pantrywise.grocery.v1.GroceryList.items:type_name -> pantrywise.grocery.v1.GroceryItem
-	20, // 10: pantrywise.grocery.v1.RecipeIngredient.created_at:type_name -> google.protobuf.Timestamp
-	20, // 11: pantrywise.grocery.v1.RecipeIngredient.updated_at:type_name -> google.protobuf.Timestamp
-	20, // 12: pantrywise.grocery.v1.Recipe.planned_date:type_name -> google.protobuf.Timestamp
-	20, // 13: pantrywise.grocery.v1.Recipe.created_at:type_name -> google.protobuf.Timestamp
-	20, // 14: pantrywise.grocery.v1.Recipe.updated_at:type_name -> google.protobuf.Timestamp
-	4,  // 15: pantrywise.grocery.v1.Recipe.ingredients:type_name -> pantrywise.grocery.v1.RecipeIngredient
-	0,  // 16: pantrywise.grocery.v1.GetHouseholdResponse.household:type_name -> pantrywise.grocery.v1.Household
-	1,  // 17: pantrywise.grocery.v1.ListFoodsResponse.foods:type_name -> pantrywise.grocery.v1.Food
-	3,  // 18: pantrywise.grocery.v1.ListGroceryListsResponse.grocery_lists:type_name -> pantrywise.grocery.v1.GroceryList
-	3,  // 19: pantrywise.grocery.v1.GetGroceryListResponse.grocery_list:type_name -> pantrywise.grocery.v1.GroceryList
-	3,  // 20: pantrywise.grocery.v1.CreateGroceryListResponse.grocery_list:type_name -> pantrywise.grocery.v1.GroceryList
-	20, // 21: pantrywise.grocery.v1.AddGroceryItemRequest.purchase_date:type_name -> google.protobuf.Timestamp
-	2,  // 22: pantrywise.grocery.v1.AddGroceryItemResponse.grocery_item:type_name -> pantrywise.grocery.v1.GroceryItem
-	5,  // 23: pantrywise.grocery.v1.ListRecipesResponse.recipes:type_name -> pantrywise.grocery.v1.Recipe
-	6,  // 24: pantrywise.grocery.v1.GroceryService.GetHousehold:input_type -> pantrywise.grocery.v1.GetHouseholdRequest
-	8,  // 25: pantrywise.grocery.v1.GroceryService.ListFoods:input_type -> pantrywise.grocery.v1.ListFoodsRequest
-	10, // 26: pantrywise.grocery.v1.GroceryService.ListGroceryLists:input_type -> pantrywise.grocery.v1.ListGroceryListsRequest
-	12, // 27: pantrywise.grocery.v1.GroceryService.GetGroceryList:input_type -> pantrywise.grocery.v1.GetGroceryListRequest
-	14, // 28: pantrywise.grocery.v1.GroceryService.CreateGroceryList:input_type -> pantrywise.grocery.v1.CreateGroceryListRequest
-	16, // 29: pantrywise.grocery.v1.GroceryService.AddGroceryItem:input_type -> pantrywise.grocery.v1.AddGroceryItemRequest
-	18, // 30: pantrywise.grocery.v1.GroceryService.ListRecipes:input_type -> pantrywise.grocery.v1.ListRecipesRequest
-	7,  // 31: pantrywise.grocery.v1.GroceryService.GetHousehold:output_type -> pantrywise.grocery.v1.GetHouseholdResponse
-	9,  // 32: pantrywise.grocery.v1.GroceryService.ListFoods:output_type -> pantrywise.grocery.v1.ListFoodsResponse
-	11, // 33: pantrywise.grocery.v1.GroceryService.ListGroceryLists:output_type -> pantrywise.grocery.v1.ListGroceryListsResponse
-	13, // 34: pantrywise.grocery.v1.GroceryService.GetGroceryList:output_type -> pantrywise.grocery.v1.GetGroceryListResponse
-	15, // 35: pantrywise.grocery.v1.GroceryService.CreateGroceryList:output_type -> pantrywise.grocery.v1.CreateGroceryListResponse
-	17, // 36: pantrywise.grocery.v1.GroceryService.AddGroceryItem:output_type -> pantrywise.grocery.v1.AddGroceryItemResponse
-	19, // 37: pantrywise.grocery.v1.GroceryService.ListRecipes:output_type -> pantrywise.grocery.v1.ListRecipesResponse
-	31, // [31:38] is the sub-list for method output_type
-	24, // [24:31] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	4,  // 9: pantrywise.grocery.v1.GroceryList.items:type_name -> pantrywise.grocery.v1.GroceryListItem
+	20, // 10: pantrywise.grocery.v1.GroceryListItem.purchase_date:type_name -> google.protobuf.Timestamp
+	20, // 11: pantrywise.grocery.v1.GroceryListItem.created_at:type_name -> google.protobuf.Timestamp
+	20, // 12: pantrywise.grocery.v1.GroceryListItem.updated_at:type_name -> google.protobuf.Timestamp
+	5,  // 13: pantrywise.grocery.v1.GroceryListItem.related_recipes:type_name -> pantrywise.grocery.v1.GroceryListRelatedRecipe
+	20, // 14: pantrywise.grocery.v1.GroceryListRelatedRecipe.planned_date:type_name -> google.protobuf.Timestamp
+	0,  // 15: pantrywise.grocery.v1.GetHouseholdResponse.household:type_name -> pantrywise.grocery.v1.Household
+	1,  // 16: pantrywise.grocery.v1.ListFoodsResponse.foods:type_name -> pantrywise.grocery.v1.Food
+	3,  // 17: pantrywise.grocery.v1.ListGroceryListsResponse.grocery_lists:type_name -> pantrywise.grocery.v1.GroceryList
+	3,  // 18: pantrywise.grocery.v1.GetGroceryListResponse.grocery_list:type_name -> pantrywise.grocery.v1.GroceryList
+	3,  // 19: pantrywise.grocery.v1.CreateGroceryListResponse.grocery_list:type_name -> pantrywise.grocery.v1.GroceryList
+	20, // 20: pantrywise.grocery.v1.AddGroceryItemRequest.purchase_date:type_name -> google.protobuf.Timestamp
+	2,  // 21: pantrywise.grocery.v1.AddGroceryItemResponse.grocery_item:type_name -> pantrywise.grocery.v1.GroceryItem
+	5,  // 22: pantrywise.grocery.v1.ListRecipesResponse.recipes:type_name -> pantrywise.grocery.v1.GroceryListRelatedRecipe
+	6,  // 23: pantrywise.grocery.v1.GroceryService.GetHousehold:input_type -> pantrywise.grocery.v1.GetHouseholdRequest
+	8,  // 24: pantrywise.grocery.v1.GroceryService.ListFoods:input_type -> pantrywise.grocery.v1.ListFoodsRequest
+	10, // 25: pantrywise.grocery.v1.GroceryService.ListGroceryLists:input_type -> pantrywise.grocery.v1.ListGroceryListsRequest
+	12, // 26: pantrywise.grocery.v1.GroceryService.GetGroceryList:input_type -> pantrywise.grocery.v1.GetGroceryListRequest
+	14, // 27: pantrywise.grocery.v1.GroceryService.CreateGroceryList:input_type -> pantrywise.grocery.v1.CreateGroceryListRequest
+	16, // 28: pantrywise.grocery.v1.GroceryService.AddGroceryItem:input_type -> pantrywise.grocery.v1.AddGroceryItemRequest
+	18, // 29: pantrywise.grocery.v1.GroceryService.ListRecipes:input_type -> pantrywise.grocery.v1.ListRecipesRequest
+	7,  // 30: pantrywise.grocery.v1.GroceryService.GetHousehold:output_type -> pantrywise.grocery.v1.GetHouseholdResponse
+	9,  // 31: pantrywise.grocery.v1.GroceryService.ListFoods:output_type -> pantrywise.grocery.v1.ListFoodsResponse
+	11, // 32: pantrywise.grocery.v1.GroceryService.ListGroceryLists:output_type -> pantrywise.grocery.v1.ListGroceryListsResponse
+	13, // 33: pantrywise.grocery.v1.GroceryService.GetGroceryList:output_type -> pantrywise.grocery.v1.GetGroceryListResponse
+	15, // 34: pantrywise.grocery.v1.GroceryService.CreateGroceryList:output_type -> pantrywise.grocery.v1.CreateGroceryListResponse
+	17, // 35: pantrywise.grocery.v1.GroceryService.AddGroceryItem:output_type -> pantrywise.grocery.v1.AddGroceryItemResponse
+	19, // 36: pantrywise.grocery.v1.GroceryService.ListRecipes:output_type -> pantrywise.grocery.v1.ListRecipesResponse
+	30, // [30:37] is the sub-list for method output_type
+	23, // [23:30] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_pantrywise_grocery_v1_grocery_proto_init() }

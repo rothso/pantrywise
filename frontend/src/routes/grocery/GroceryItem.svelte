@@ -1,9 +1,9 @@
 <script lang="ts">
   import Checkbox from '$lib/components/ui/checkbox/Checkbox.svelte';
-  import type { GroceryItem } from '$lib/gen/pantrywise/grocery/v1/grocery_pb';
+  import type { GroceryListItem } from '$lib/gen/pantrywise/grocery/v1/grocery_pb';
 
   interface Props {
-    item: GroceryItem;
+    item: GroceryListItem;
   }
 
   const { item }: Props = $props();
@@ -15,8 +15,15 @@
   <div class="flex gap-4">
     <Checkbox class="mt-1" bind:checked />
     <div class="flex grow flex-col">
-      <span>{item.foodName}</span>
-      <span class="text-sm text-gray-400">{item.quantity} {item.unit}</span>
+      <div class="flex items-center justify-between gap-2">
+        <span>{item.foodName}</span>
+        <span class="text-sm text-gray-400">{item.quantity} {item.unit}</span>
+      </div>
+      {#if item.relatedRecipes.length > 0}
+        <div class="text-sm text-gray-400">
+          {item.relatedRecipes.map((recipe) => recipe.name).join(', ')}
+        </div>
+      {/if}
     </div>
   </div>
 </div>
