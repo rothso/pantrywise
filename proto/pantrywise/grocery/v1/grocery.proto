@@ -35,26 +35,25 @@ message GroceryList {
   string name = 2;
   google.protobuf.Timestamp created_at = 3;
   google.protobuf.Timestamp updated_at = 4;
-  repeated GroceryItem items = 5;
+  repeated GroceryListItem items = 5;
 }
 
-message RecipeIngredient {
-  string ingredient_id = 1;
-  string recipe_id = 2;
-  string food_id = 3;
-  double quantity = 4;
-  string unit = 5;
+message GroceryListItem {
+  string item_id = 1;
+  string food_id = 2;
+  double quantity = 3;
+  string unit = 4;
+  google.protobuf.Timestamp purchase_date = 5;
   google.protobuf.Timestamp created_at = 6;
   google.protobuf.Timestamp updated_at = 7;
+  string food_name = 8;
+  repeated GroceryListRelatedRecipe related_recipes = 9;
 }
 
-message Recipe {
+message GroceryListRelatedRecipe {
   string recipe_id = 1;
   string name = 2;
   google.protobuf.Timestamp planned_date = 3;
-  google.protobuf.Timestamp created_at = 4;
-  google.protobuf.Timestamp updated_at = 5;
-  repeated RecipeIngredient ingredients = 6;
 }
 
 message GetHouseholdRequest {}
@@ -106,7 +105,7 @@ message AddGroceryItemResponse {
 message ListRecipesRequest {}
 
 message ListRecipesResponse {
-  repeated Recipe recipes = 1;
+  repeated GroceryListRelatedRecipe recipes = 1;
 }
 
 service GroceryService {

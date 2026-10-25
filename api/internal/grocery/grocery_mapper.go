@@ -18,9 +18,9 @@ func groceryListsToProto(lists []List) *groceryv1.ListGroceryListsResponse {
 }
 
 func groceryListToProto(list List) *groceryv1.GroceryList {
-	protoItems := make([]*groceryv1.GroceryItem, 0, len(list.Items))
+	protoItems := make([]*groceryv1.GroceryListItem, 0, len(list.Items))
 	for _, item := range list.Items {
-		protoItem := &groceryv1.GroceryItem{
+		protoItem := &groceryv1.GroceryListItem{
 			ItemId:   item.ID.String(),
 			Quantity: item.Quantity,
 			Unit:     string(item.Unit),
@@ -32,6 +32,18 @@ func groceryListToProto(list List) *groceryv1.GroceryList {
 		if item.PurchaseDate != nil {
 			protoItem.PurchaseDate = timestamppb.New(*item.PurchaseDate)
 		}
+		protoRecipes := make([]*groceryv1.GroceryListRelatedRecipe, 0, len(item.Recipes))
+		for _, relatedRecipe := range item.Recipes {
+			protoRecipe := &groceryv1.GroceryListRelatedRecipe{
+				RecipeId: relatedRecipe.ID.String(),
+				Name:     relatedRecipe.Name,
+			}
+			if relatedRecipe.PlannedDate != nil {
+				protoRecipe.PlannedDate = timestamppb.New(*relatedRecipe.PlannedDate)
+			}
+			protoRecipes = append(protoRecipes, protoRecipe)
+		}
+		protoItem.RelatedRecipes = protoRecipes
 		protoItems = append(protoItems, protoItem)
 	}
 

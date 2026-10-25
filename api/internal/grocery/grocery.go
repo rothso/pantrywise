@@ -2,7 +2,6 @@ package grocery
 
 import (
 	pantry "pantrywise/internal"
-	"pantrywise/internal/recipe"
 	"time"
 
 	"github.com/google/uuid"
@@ -18,8 +17,14 @@ type List struct {
 type Item struct {
 	ID           uuid.UUID
 	Food         *pantry.Food
-	Recipes      []recipe.Recipe
+	Recipes      []RelatedRecipe
 	Quantity     float64
 	Unit         pantry.Unit
 	PurchaseDate *time.Time
+}
+
+type RelatedRecipe struct {
+	ID          uuid.UUID
+	Name        string
+	PlannedDate *time.Time
 }
