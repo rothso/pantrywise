@@ -2,8 +2,12 @@ package server
 
 import (
 	"net/http"
+	"pantrywise/internal/gen/pantrywise/grocery/v1/groceryv1connect"
 	"pantrywise/internal/grocery"
 	"pantrywise/internal/middleware"
+
+	"connectrpc.com/connect/v2"
+	"connectrpc.com/connect/v2/connecthttp"
 )
 
 type Server struct {
@@ -26,7 +30,11 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func (s *Server) routes() {
 	protected := http.NewServeMux()
-	protected.HandleFunc("GET /grocery", grocery.HandleList(s.groceryRepo))
+
+	// gRPC Connect routes
+	connectServer := connect.NewServer()
+	groceryv1connect.RegisterGroceryServiceHandler(connectServer, grocery.NewService(s.groceryRepo))
+	connecthttp.Mount(protected, connectServer)
 
 	s.router.Handle("/", middleware.Authenticate(protected))
 }

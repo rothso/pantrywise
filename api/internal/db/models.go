@@ -21,7 +21,6 @@ type PantryGroceryItem struct {
 	ItemID       uuid.UUID
 	ListID       uuid.UUID
 	FoodID       uuid.UUID
-	StoreID      *uuid.UUID
 	Quantity     pgtype.Numeric
 	Unit         string
 	PurchaseDate pgtype.Timestamp
@@ -48,17 +47,7 @@ type PantryRecipe struct {
 	RecipeID    uuid.UUID
 	HouseholdID uuid.UUID
 	Name        string
-	CategoryID  *uuid.UUID
 	PlannedDate pgtype.Timestamp
-	CreatedAt   pgtype.Timestamp
-	UpdatedAt   pgtype.Timestamp
-}
-
-type PantryRecipeCategory struct {
-	CategoryID  uuid.UUID
-	HouseholdID uuid.UUID
-	Name        string
-	ColorRgba   int32
 	CreatedAt   pgtype.Timestamp
 	UpdatedAt   pgtype.Timestamp
 }
@@ -69,26 +58,6 @@ type PantryRecipeIngredient struct {
 	FoodID       uuid.UUID
 	Quantity     pgtype.Numeric
 	Unit         string
-	Preparation  pgtype.Text
 	CreatedAt    pgtype.Timestamp
 	UpdatedAt    pgtype.Timestamp
-}
-
-type PantryStore struct {
-	StoreID     uuid.UUID
-	HouseholdID uuid.UUID
-	Name        string
-	CreatedAt   pgtype.Timestamp
-	UpdatedAt   pgtype.Timestamp
-}
-
-type PantryStoreListing struct {
-	ListingID  uuid.UUID
-	StoreID    uuid.UUID
-	FoodID     uuid.UUID
-	PriceCents int32
-	Quantity   int32
-	Unit       string
-	CreatedAt  pgtype.Timestamp
-	UpdatedAt  pgtype.Timestamp
 }

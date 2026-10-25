@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package pantrywise.grocery.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "pantrywise/internal/gen/pantrywise/grocery/v1;groceryv1";
+
+message Household {
+  string name = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message Food {
+  string food_id = 1;
+  string name = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp updated_at = 4;
+}
+
+message GroceryItem {
+  string item_id = 1;
+  string food_id = 2;
+  double quantity = 3;
+  string unit = 4;
+  google.protobuf.Timestamp purchase_date = 5;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
+  string food_name = 8;
+}
+
+message GroceryList {
+  string list_id = 1;
+  string name = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp updated_at = 4;
+  repeated GroceryItem items = 5;
+}
+
+message RecipeIngredient {
+  string ingredient_id = 1;
+  string recipe_id = 2;
+  string food_id = 3;
+  double quantity = 4;
+  string unit = 5;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
+}
+
+message Recipe {
+  string recipe_id = 1;
+  string name = 2;
+  google.protobuf.Timestamp planned_date = 3;
+  google.protobuf.Timestamp created_at = 4;
+  google.protobuf.Timestamp updated_at = 5;
+  repeated RecipeIngredient ingredients = 6;
+}
+
+message GetHouseholdRequest {}
+
+message GetHouseholdResponse {
+  Household household = 1;
+}
+
+message ListFoodsRequest {}
+
+message ListFoodsResponse {
+  repeated Food foods = 1;
+}
+
+message ListGroceryListsRequest {}
+
+message ListGroceryListsResponse {
+  repeated GroceryList grocery_lists = 1;
+}
+
+message GetGroceryListRequest {
+  string list_id = 1;
+}
+
+message GetGroceryListResponse {
+  GroceryList grocery_list = 1;
+}
+
+message CreateGroceryListRequest {
+  string name = 1;
+}
+
+message CreateGroceryListResponse {
+  GroceryList grocery_list = 1;
+}
+
+message AddGroceryItemRequest {
+  string list_id = 1;
+  string food_id = 2;
+  double quantity = 3;
+  string unit = 4;
+  google.protobuf.Timestamp purchase_date = 5;
+}
+
+message AddGroceryItemResponse {
+  GroceryItem grocery_item = 1;
+}
+
+message ListRecipesRequest {}
+
+message ListRecipesResponse {
+  repeated Recipe recipes = 1;
+}
+
+service GroceryService {
+  rpc GetHousehold(GetHouseholdRequest) returns (GetHouseholdResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+  rpc ListFoods(ListFoodsRequest) returns (ListFoodsResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+  rpc ListGroceryLists(ListGroceryListsRequest) returns (ListGroceryListsResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+  rpc GetGroceryList(GetGroceryListRequest) returns (GetGroceryListResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+  rpc CreateGroceryList(CreateGroceryListRequest) returns (CreateGroceryListResponse);
+  rpc AddGroceryItem(AddGroceryItemRequest) returns (AddGroceryItemResponse);
+  rpc ListRecipes(ListRecipesRequest) returns (ListRecipesResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+}

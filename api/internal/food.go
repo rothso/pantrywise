@@ -12,6 +12,7 @@ type Unit string
 const (
 	Grams      Unit = "g"
 	Milliliter Unit = "ml"
+	Pounds     Unit = "lbs"
 	Cups       Unit = "cups"
 	Pieces     Unit = "pcs"
 	Teaspoon   Unit = "tsp"

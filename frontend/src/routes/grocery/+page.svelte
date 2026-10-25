@@ -5,5 +5,5 @@
 </script>
 
 <div class="container mx-auto w-3xl">
-  <GroceryList groceryListByStore={data.groceryListByStore} />
+  <GroceryList groceryLists={data.groceryLists} />
 </div>
