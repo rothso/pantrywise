@@ -12,13 +12,6 @@ message Household {
   google.protobuf.Timestamp updated_at = 3;
 }
 
-message Food {
-  string food_id = 1;
-  string name = 2;
-  google.protobuf.Timestamp created_at = 3;
-  google.protobuf.Timestamp updated_at = 4;
-}
-
 message GroceryItem {
   string item_id = 1;
   string food_id = 2;
@@ -60,12 +53,6 @@ message GetHouseholdRequest {}
 
 message GetHouseholdResponse {
   Household household = 1;
-}
-
-message ListFoodsRequest {}
-
-message ListFoodsResponse {
-  repeated Food foods = 1;
 }
 
 message ListGroceryListsRequest {}
@@ -110,9 +97,6 @@ message ListRecipesResponse {
 
 service GroceryService {
   rpc GetHousehold(GetHouseholdRequest) returns (GetHouseholdResponse) {
-    option idempotency_level = NO_SIDE_EFFECTS;
-  }
-  rpc ListFoods(ListFoodsRequest) returns (ListFoodsResponse) {
     option idempotency_level = NO_SIDE_EFFECTS;
   }
   rpc ListGroceryLists(ListGroceryListsRequest) returns (ListGroceryListsResponse) {

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddGroceryItemRequest, AddGroceryItemResponse, CreateGroceryListRequest, CreateGroceryListResponse, GetGroceryListRequest, GetGroceryListResponse, GetHouseholdRequest, GetHouseholdResponse, ListFoodsRequest, ListFoodsResponse, ListGroceryListsRequest, ListGroceryListsResponse, ListRecipesRequest, ListRecipesResponse } from "./grocery_pb.js";
+import { AddGroceryItemRequest, AddGroceryItemResponse, CreateGroceryListRequest, CreateGroceryListResponse, GetGroceryListRequest, GetGroceryListResponse, GetHouseholdRequest, GetHouseholdResponse, ListGroceryListsRequest, ListGroceryListsResponse, ListRecipesRequest, ListRecipesResponse } from "./grocery_pb.js";
 import { MethodIdempotency, MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,16 +19,6 @@ export const GroceryService = {
       name: "GetHousehold",
       I: GetHouseholdRequest,
       O: GetHouseholdResponse,
-      kind: MethodKind.Unary,
-      idempotency: MethodIdempotency.NoSideEffects,
-    },
-    /**
-     * @generated from rpc pantrywise.grocery.v1.GroceryService.ListFoods
-     */
-    listFoods: {
-      name: "ListFoods",
-      I: ListFoodsRequest,
-      O: ListFoodsResponse,
       kind: MethodKind.Unary,
       idempotency: MethodIdempotency.NoSideEffects,
     },

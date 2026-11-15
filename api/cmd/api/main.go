@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"pantrywise/internal/config"
 	"pantrywise/internal/db"
+	"pantrywise/internal/food"
 	"pantrywise/internal/grocery"
 	pantry "pantrywise/internal/server"
 
@@ -32,6 +33,7 @@ func main() {
 
 	srv := pantry.NewServer(
 		&grocery.Repo{Queries: queries},
+		&food.Repo{Queries: queries},
 	)
 
 	log.Printf("Starting server on %s", cfg.Addr)

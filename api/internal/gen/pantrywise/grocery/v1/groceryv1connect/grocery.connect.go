@@ -27,8 +27,6 @@ const (
 	// GroceryServiceGetHouseholdProcedure is the procedure name of the GroceryService's GetHousehold
 	// RPC.
 	GroceryServiceGetHouseholdProcedure = "/pantrywise.grocery.v1.GroceryService/GetHousehold"
-	// GroceryServiceListFoodsProcedure is the procedure name of the GroceryService's ListFoods RPC.
-	GroceryServiceListFoodsProcedure = "/pantrywise.grocery.v1.GroceryService/ListFoods"
 	// GroceryServiceListGroceryListsProcedure is the procedure name of the GroceryService's
 	// ListGroceryLists RPC.
 	GroceryServiceListGroceryListsProcedure = "/pantrywise.grocery.v1.GroceryService/ListGroceryLists"
@@ -51,14 +49,6 @@ var (
 			StreamType:       connect.StreamTypeUnary,
 			Schema:           v1.File_pantrywise_grocery_v1_grocery_proto.Services().ByName("GroceryService").Methods().ByName("GetHousehold"),
 			Procedure:        GroceryServiceGetHouseholdProcedure,
-			IdempotencyLevel: connect.IdempotencyNoSideEffects,
-		}
-	})
-	groceryServiceListFoodsSpec = sync.OnceValue(func() connect.Spec {
-		return connect.Spec{
-			StreamType:       connect.StreamTypeUnary,
-			Schema:           v1.File_pantrywise_grocery_v1_grocery_proto.Services().ByName("GroceryService").Methods().ByName("ListFoods"),
-			Procedure:        GroceryServiceListFoodsProcedure,
 			IdempotencyLevel: connect.IdempotencyNoSideEffects,
 		}
 	})
@@ -105,7 +95,6 @@ var (
 // GroceryServiceClient is a client for the pantrywise.grocery.v1.GroceryService service.
 type GroceryServiceClient interface {
 	GetHousehold(context.Context, *v1.GetHouseholdRequest) (*v1.GetHouseholdResponse, error)
-	ListFoods(context.Context, *v1.ListFoodsRequest) (*v1.ListFoodsResponse, error)
 	ListGroceryLists(context.Context, *v1.ListGroceryListsRequest) (*v1.ListGroceryListsResponse, error)
 	GetGroceryList(context.Context, *v1.GetGroceryListRequest) (*v1.GetGroceryListResponse, error)
 	CreateGroceryList(context.Context, *v1.CreateGroceryListRequest) (*v1.CreateGroceryListResponse, error)
@@ -122,7 +111,6 @@ func NewGroceryServiceClient(client *connect.Client) GroceryServiceClient {
 // GroceryServiceHandler is an implementation of the pantrywise.grocery.v1.GroceryService service.
 type GroceryServiceHandler interface {
 	GetHousehold(context.Context, *v1.GetHouseholdRequest) (*v1.GetHouseholdResponse, error)
-	ListFoods(context.Context, *v1.ListFoodsRequest) (*v1.ListFoodsResponse, error)
 	ListGroceryLists(context.Context, *v1.ListGroceryListsRequest) (*v1.ListGroceryListsResponse, error)
 	GetGroceryList(context.Context, *v1.GetGroceryListRequest) (*v1.GetGroceryListResponse, error)
 	CreateGroceryList(context.Context, *v1.CreateGroceryListRequest) (*v1.CreateGroceryListResponse, error)
@@ -136,7 +124,6 @@ func RegisterGroceryServiceHandler(server *connect.Server, svc GroceryServiceHan
 	adapter := groceryServiceHandler{svc: svc}
 	server.Register(
 		connect.Method{Spec: groceryServiceGetHouseholdSpec(), Handler: adapter.getHousehold},
-		connect.Method{Spec: groceryServiceListFoodsSpec(), Handler: adapter.listFoods},
 		connect.Method{Spec: groceryServiceListGroceryListsSpec(), Handler: adapter.listGroceryLists},
 		connect.Method{Spec: groceryServiceGetGroceryListSpec(), Handler: adapter.getGroceryList},
 		connect.Method{Spec: groceryServiceCreateGroceryListSpec(), Handler: adapter.createGroceryList},
@@ -150,10 +137,6 @@ type UnimplementedGroceryServiceHandler struct{}
 
 func (UnimplementedGroceryServiceHandler) GetHousehold(context.Context, *v1.GetHouseholdRequest) (*v1.GetHouseholdResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, "pantrywise.grocery.v1.GroceryService.GetHousehold is not implemented")
-}
-
-func (UnimplementedGroceryServiceHandler) ListFoods(context.Context, *v1.ListFoodsRequest) (*v1.ListFoodsResponse, error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, "pantrywise.grocery.v1.GroceryService.ListFoods is not implemented")
 }
 
 func (UnimplementedGroceryServiceHandler) ListGroceryLists(context.Context, *v1.ListGroceryListsRequest) (*v1.ListGroceryListsResponse, error) {
@@ -183,14 +166,6 @@ type groceryServiceClient struct {
 func (c *groceryServiceClient) GetHousehold(ctx context.Context, req *v1.GetHouseholdRequest) (*v1.GetHouseholdResponse, error) {
 	var res v1.GetHouseholdResponse
 	if err := c.client.CallUnary(ctx, groceryServiceGetHouseholdSpec(), req, &res); err != nil {
-		return nil, err
-	}
-	return &res, nil
-}
-
-func (c *groceryServiceClient) ListFoods(ctx context.Context, req *v1.ListFoodsRequest) (*v1.ListFoodsResponse, error) {
-	var res v1.ListFoodsResponse
-	if err := c.client.CallUnary(ctx, groceryServiceListFoodsSpec(), req, &res); err != nil {
 		return nil, err
 	}
 	return &res, nil
@@ -244,18 +219,6 @@ func (h groceryServiceHandler) getHousehold(ctx context.Context, _ connect.Spec,
 		return err
 	}
 	res, err := h.svc.GetHousehold(ctx, &req)
-	if err != nil {
-		return err
-	}
-	return stream.Send(res)
-}
-
-func (h groceryServiceHandler) listFoods(ctx context.Context, _ connect.Spec, stream connect.ServerStream) error {
-	var req v1.ListFoodsRequest
-	if err := stream.Receive(&req); err != nil {
-		return err
-	}
-	res, err := h.svc.ListFoods(ctx, &req)
 	if err != nil {
 		return err
 	}

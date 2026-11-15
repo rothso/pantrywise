@@ -82,74 +82,6 @@ func (x *Household) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-type Food struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	FoodId        string                 `protobuf:"bytes,1,opt,name=food_id,json=foodId,proto3" json:"food_id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *Food) Reset() {
-	*x = Food{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *Food) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Food) ProtoMessage() {}
-
-func (x *Food) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Food.ProtoReflect.Descriptor instead.
-func (*Food) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *Food) GetFoodId() string {
-	if x != nil {
-		return x.FoodId
-	}
-	return ""
-}
-
-func (x *Food) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *Food) GetCreatedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.CreatedAt
-	}
-	return nil
-}
-
-func (x *Food) GetUpdatedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.UpdatedAt
-	}
-	return nil
-}
-
 type GroceryItem struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
@@ -166,7 +98,7 @@ type GroceryItem struct {
 
 func (x *GroceryItem) Reset() {
 	*x = GroceryItem{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[2]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -178,7 +110,7 @@ func (x *GroceryItem) String() string {
 func (*GroceryItem) ProtoMessage() {}
 
 func (x *GroceryItem) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[2]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -191,7 +123,7 @@ func (x *GroceryItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GroceryItem.ProtoReflect.Descriptor instead.
 func (*GroceryItem) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{2}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GroceryItem) GetItemId() string {
@@ -263,7 +195,7 @@ type GroceryList struct {
 
 func (x *GroceryList) Reset() {
 	*x = GroceryList{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[3]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -275,7 +207,7 @@ func (x *GroceryList) String() string {
 func (*GroceryList) ProtoMessage() {}
 
 func (x *GroceryList) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[3]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -288,7 +220,7 @@ func (x *GroceryList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GroceryList.ProtoReflect.Descriptor instead.
 func (*GroceryList) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{3}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GroceryList) GetListId() string {
@@ -343,7 +275,7 @@ type GroceryListItem struct {
 
 func (x *GroceryListItem) Reset() {
 	*x = GroceryListItem{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[4]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -355,7 +287,7 @@ func (x *GroceryListItem) String() string {
 func (*GroceryListItem) ProtoMessage() {}
 
 func (x *GroceryListItem) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[4]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -368,7 +300,7 @@ func (x *GroceryListItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GroceryListItem.ProtoReflect.Descriptor instead.
 func (*GroceryListItem) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{4}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GroceryListItem) GetItemId() string {
@@ -445,7 +377,7 @@ type GroceryListRelatedRecipe struct {
 
 func (x *GroceryListRelatedRecipe) Reset() {
 	*x = GroceryListRelatedRecipe{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[5]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -457,7 +389,7 @@ func (x *GroceryListRelatedRecipe) String() string {
 func (*GroceryListRelatedRecipe) ProtoMessage() {}
 
 func (x *GroceryListRelatedRecipe) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[5]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -470,7 +402,7 @@ func (x *GroceryListRelatedRecipe) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GroceryListRelatedRecipe.ProtoReflect.Descriptor instead.
 func (*GroceryListRelatedRecipe) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{5}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GroceryListRelatedRecipe) GetRecipeId() string {
@@ -502,7 +434,7 @@ type GetHouseholdRequest struct {
 
 func (x *GetHouseholdRequest) Reset() {
 	*x = GetHouseholdRequest{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[6]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -514,7 +446,7 @@ func (x *GetHouseholdRequest) String() string {
 func (*GetHouseholdRequest) ProtoMessage() {}
 
 func (x *GetHouseholdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[6]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -527,7 +459,7 @@ func (x *GetHouseholdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetHouseholdRequest.ProtoReflect.Descriptor instead.
 func (*GetHouseholdRequest) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{6}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{5}
 }
 
 type GetHouseholdResponse struct {
@@ -539,7 +471,7 @@ type GetHouseholdResponse struct {
 
 func (x *GetHouseholdResponse) Reset() {
 	*x = GetHouseholdResponse{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[7]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -551,7 +483,7 @@ func (x *GetHouseholdResponse) String() string {
 func (*GetHouseholdResponse) ProtoMessage() {}
 
 func (x *GetHouseholdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[7]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -564,92 +496,12 @@ func (x *GetHouseholdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetHouseholdResponse.ProtoReflect.Descriptor instead.
 func (*GetHouseholdResponse) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{7}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetHouseholdResponse) GetHousehold() *Household {
 	if x != nil {
 		return x.Household
-	}
-	return nil
-}
-
-type ListFoodsRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ListFoodsRequest) Reset() {
-	*x = ListFoodsRequest{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[8]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ListFoodsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ListFoodsRequest) ProtoMessage() {}
-
-func (x *ListFoodsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[8]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ListFoodsRequest.ProtoReflect.Descriptor instead.
-func (*ListFoodsRequest) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{8}
-}
-
-type ListFoodsResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Foods         []*Food                `protobuf:"bytes,1,rep,name=foods,proto3" json:"foods,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ListFoodsResponse) Reset() {
-	*x = ListFoodsResponse{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[9]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ListFoodsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ListFoodsResponse) ProtoMessage() {}
-
-func (x *ListFoodsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[9]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ListFoodsResponse.ProtoReflect.Descriptor instead.
-func (*ListFoodsResponse) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{9}
-}
-
-func (x *ListFoodsResponse) GetFoods() []*Food {
-	if x != nil {
-		return x.Foods
 	}
 	return nil
 }
@@ -662,7 +514,7 @@ type ListGroceryListsRequest struct {
 
 func (x *ListGroceryListsRequest) Reset() {
 	*x = ListGroceryListsRequest{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[10]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -674,7 +526,7 @@ func (x *ListGroceryListsRequest) String() string {
 func (*ListGroceryListsRequest) ProtoMessage() {}
 
 func (x *ListGroceryListsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[10]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -687,7 +539,7 @@ func (x *ListGroceryListsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListGroceryListsRequest.ProtoReflect.Descriptor instead.
 func (*ListGroceryListsRequest) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{10}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{7}
 }
 
 type ListGroceryListsResponse struct {
@@ -699,7 +551,7 @@ type ListGroceryListsResponse struct {
 
 func (x *ListGroceryListsResponse) Reset() {
 	*x = ListGroceryListsResponse{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[11]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -711,7 +563,7 @@ func (x *ListGroceryListsResponse) String() string {
 func (*ListGroceryListsResponse) ProtoMessage() {}
 
 func (x *ListGroceryListsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[11]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -724,7 +576,7 @@ func (x *ListGroceryListsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListGroceryListsResponse.ProtoReflect.Descriptor instead.
 func (*ListGroceryListsResponse) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{11}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListGroceryListsResponse) GetGroceryLists() []*GroceryList {
@@ -743,7 +595,7 @@ type GetGroceryListRequest struct {
 
 func (x *GetGroceryListRequest) Reset() {
 	*x = GetGroceryListRequest{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[12]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -755,7 +607,7 @@ func (x *GetGroceryListRequest) String() string {
 func (*GetGroceryListRequest) ProtoMessage() {}
 
 func (x *GetGroceryListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[12]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -768,7 +620,7 @@ func (x *GetGroceryListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetGroceryListRequest.ProtoReflect.Descriptor instead.
 func (*GetGroceryListRequest) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{12}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetGroceryListRequest) GetListId() string {
@@ -787,7 +639,7 @@ type GetGroceryListResponse struct {
 
 func (x *GetGroceryListResponse) Reset() {
 	*x = GetGroceryListResponse{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[13]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -799,7 +651,7 @@ func (x *GetGroceryListResponse) String() string {
 func (*GetGroceryListResponse) ProtoMessage() {}
 
 func (x *GetGroceryListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[13]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -812,7 +664,7 @@ func (x *GetGroceryListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetGroceryListResponse.ProtoReflect.Descriptor instead.
 func (*GetGroceryListResponse) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{13}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetGroceryListResponse) GetGroceryList() *GroceryList {
@@ -831,7 +683,7 @@ type CreateGroceryListRequest struct {
 
 func (x *CreateGroceryListRequest) Reset() {
 	*x = CreateGroceryListRequest{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[14]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -843,7 +695,7 @@ func (x *CreateGroceryListRequest) String() string {
 func (*CreateGroceryListRequest) ProtoMessage() {}
 
 func (x *CreateGroceryListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[14]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -856,7 +708,7 @@ func (x *CreateGroceryListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateGroceryListRequest.ProtoReflect.Descriptor instead.
 func (*CreateGroceryListRequest) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{14}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *CreateGroceryListRequest) GetName() string {
@@ -875,7 +727,7 @@ type CreateGroceryListResponse struct {
 
 func (x *CreateGroceryListResponse) Reset() {
 	*x = CreateGroceryListResponse{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[15]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -887,7 +739,7 @@ func (x *CreateGroceryListResponse) String() string {
 func (*CreateGroceryListResponse) ProtoMessage() {}
 
 func (x *CreateGroceryListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[15]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -900,7 +752,7 @@ func (x *CreateGroceryListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateGroceryListResponse.ProtoReflect.Descriptor instead.
 func (*CreateGroceryListResponse) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{15}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *CreateGroceryListResponse) GetGroceryList() *GroceryList {
@@ -923,7 +775,7 @@ type AddGroceryItemRequest struct {
 
 func (x *AddGroceryItemRequest) Reset() {
 	*x = AddGroceryItemRequest{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[16]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -935,7 +787,7 @@ func (x *AddGroceryItemRequest) String() string {
 func (*AddGroceryItemRequest) ProtoMessage() {}
 
 func (x *AddGroceryItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[16]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -948,7 +800,7 @@ func (x *AddGroceryItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddGroceryItemRequest.ProtoReflect.Descriptor instead.
 func (*AddGroceryItemRequest) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{16}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *AddGroceryItemRequest) GetListId() string {
@@ -995,7 +847,7 @@ type AddGroceryItemResponse struct {
 
 func (x *AddGroceryItemResponse) Reset() {
 	*x = AddGroceryItemResponse{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[17]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1007,7 +859,7 @@ func (x *AddGroceryItemResponse) String() string {
 func (*AddGroceryItemResponse) ProtoMessage() {}
 
 func (x *AddGroceryItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[17]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1020,7 +872,7 @@ func (x *AddGroceryItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddGroceryItemResponse.ProtoReflect.Descriptor instead.
 func (*AddGroceryItemResponse) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{17}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *AddGroceryItemResponse) GetGroceryItem() *GroceryItem {
@@ -1038,7 +890,7 @@ type ListRecipesRequest struct {
 
 func (x *ListRecipesRequest) Reset() {
 	*x = ListRecipesRequest{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[18]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1050,7 +902,7 @@ func (x *ListRecipesRequest) String() string {
 func (*ListRecipesRequest) ProtoMessage() {}
 
 func (x *ListRecipesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[18]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1063,7 +915,7 @@ func (x *ListRecipesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRecipesRequest.ProtoReflect.Descriptor instead.
 func (*ListRecipesRequest) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{18}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{15}
 }
 
 type ListRecipesResponse struct {
@@ -1075,7 +927,7 @@ type ListRecipesResponse struct {
 
 func (x *ListRecipesResponse) Reset() {
 	*x = ListRecipesResponse{}
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[19]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1087,7 +939,7 @@ func (x *ListRecipesResponse) String() string {
 func (*ListRecipesResponse) ProtoMessage() {}
 
 func (x *ListRecipesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[19]
+	mi := &file_pantrywise_grocery_v1_grocery_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1100,7 +952,7 @@ func (x *ListRecipesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRecipesResponse.ProtoReflect.Descriptor instead.
 func (*ListRecipesResponse) Descriptor() ([]byte, []int) {
-	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{19}
+	return file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ListRecipesResponse) GetRecipes() []*GroceryListRelatedRecipe {
@@ -1120,14 +972,7 @@ const file_pantrywise_grocery_v1_grocery_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xa9\x01\n" +
-	"\x04Food\x12\x17\n" +
-	"\afood_id\x18\x01 \x01(\tR\x06foodId\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x129\n" +
-	"\n" +
-	"created_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
-	"\n" +
-	"updated_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xc3\x02\n" +
+	"updated_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xc3\x02\n" +
 	"\vGroceryItem\x12\x17\n" +
 	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x17\n" +
 	"\afood_id\x18\x02 \x01(\tR\x06foodId\x12\x1a\n" +
@@ -1165,10 +1010,7 @@ const file_pantrywise_grocery_v1_grocery_proto_rawDesc = "" +
 	"\fplanned_date\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\vplannedDate\"\x15\n" +
 	"\x13GetHouseholdRequest\"V\n" +
 	"\x14GetHouseholdResponse\x12>\n" +
-	"\thousehold\x18\x01 \x01(\v2 .pantrywise.grocery.v1.HouseholdR\thousehold\"\x12\n" +
-	"\x10ListFoodsRequest\"F\n" +
-	"\x11ListFoodsResponse\x121\n" +
-	"\x05foods\x18\x01 \x03(\v2\x1b.pantrywise.grocery.v1.FoodR\x05foods\"\x19\n" +
+	"\thousehold\x18\x01 \x01(\v2 .pantrywise.grocery.v1.HouseholdR\thousehold\"\x19\n" +
 	"\x17ListGroceryListsRequest\"c\n" +
 	"\x18ListGroceryListsResponse\x12G\n" +
 	"\rgrocery_lists\x18\x01 \x03(\v2\".pantrywise.grocery.v1.GroceryListR\fgroceryLists\"0\n" +
@@ -1190,10 +1032,9 @@ const file_pantrywise_grocery_v1_grocery_proto_rawDesc = "" +
 	"\fgrocery_item\x18\x01 \x01(\v2\".pantrywise.grocery.v1.GroceryItemR\vgroceryItem\"\x14\n" +
 	"\x12ListRecipesRequest\"`\n" +
 	"\x13ListRecipesResponse\x12I\n" +
-	"\arecipes\x18\x01 \x03(\v2/.pantrywise.grocery.v1.GroceryListRelatedRecipeR\arecipes2\xa3\x06\n" +
+	"\arecipes\x18\x01 \x03(\v2/.pantrywise.grocery.v1.GroceryListRelatedRecipeR\arecipes2\xbe\x05\n" +
 	"\x0eGroceryService\x12l\n" +
-	"\fGetHousehold\x12*.pantrywise.grocery.v1.GetHouseholdRequest\x1a+.pantrywise.grocery.v1.GetHouseholdResponse\"\x03\x90\x02\x01\x12c\n" +
-	"\tListFoods\x12'.pantrywise.grocery.v1.ListFoodsRequest\x1a(.pantrywise.grocery.v1.ListFoodsResponse\"\x03\x90\x02\x01\x12x\n" +
+	"\fGetHousehold\x12*.pantrywise.grocery.v1.GetHouseholdRequest\x1a+.pantrywise.grocery.v1.GetHouseholdResponse\"\x03\x90\x02\x01\x12x\n" +
 	"\x10ListGroceryLists\x12..pantrywise.grocery.v1.ListGroceryListsRequest\x1a/.pantrywise.grocery.v1.ListGroceryListsResponse\"\x03\x90\x02\x01\x12r\n" +
 	"\x0eGetGroceryList\x12,.pantrywise.grocery.v1.GetGroceryListRequest\x1a-.pantrywise.grocery.v1.GetGroceryListResponse\"\x03\x90\x02\x01\x12v\n" +
 	"\x11CreateGroceryList\x12/.pantrywise.grocery.v1.CreateGroceryListRequest\x1a0.pantrywise.grocery.v1.CreateGroceryListResponse\x12m\n" +
@@ -1212,73 +1053,65 @@ func file_pantrywise_grocery_v1_grocery_proto_rawDescGZIP() []byte {
 	return file_pantrywise_grocery_v1_grocery_proto_rawDescData
 }
 
-var file_pantrywise_grocery_v1_grocery_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
+var file_pantrywise_grocery_v1_grocery_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_pantrywise_grocery_v1_grocery_proto_goTypes = []any{
 	(*Household)(nil),                 // 0: pantrywise.grocery.v1.Household
-	(*Food)(nil),                      // 1: pantrywise.grocery.v1.Food
-	(*GroceryItem)(nil),               // 2: pantrywise.grocery.v1.GroceryItem
-	(*GroceryList)(nil),               // 3: pantrywise.grocery.v1.GroceryList
-	(*GroceryListItem)(nil),           // 4: pantrywise.grocery.v1.GroceryListItem
-	(*GroceryListRelatedRecipe)(nil),  // 5: pantrywise.grocery.v1.GroceryListRelatedRecipe
-	(*GetHouseholdRequest)(nil),       // 6: pantrywise.grocery.v1.GetHouseholdRequest
-	(*GetHouseholdResponse)(nil),      // 7: pantrywise.grocery.v1.GetHouseholdResponse
-	(*ListFoodsRequest)(nil),          // 8: pantrywise.grocery.v1.ListFoodsRequest
-	(*ListFoodsResponse)(nil),         // 9: pantrywise.grocery.v1.ListFoodsResponse
-	(*ListGroceryListsRequest)(nil),   // 10: pantrywise.grocery.v1.ListGroceryListsRequest
-	(*ListGroceryListsResponse)(nil),  // 11: pantrywise.grocery.v1.ListGroceryListsResponse
-	(*GetGroceryListRequest)(nil),     // 12: pantrywise.grocery.v1.GetGroceryListRequest
-	(*GetGroceryListResponse)(nil),    // 13: pantrywise.grocery.v1.GetGroceryListResponse
-	(*CreateGroceryListRequest)(nil),  // 14: pantrywise.grocery.v1.CreateGroceryListRequest
-	(*CreateGroceryListResponse)(nil), // 15: pantrywise.grocery.v1.CreateGroceryListResponse
-	(*AddGroceryItemRequest)(nil),     // 16: pantrywise.grocery.v1.AddGroceryItemRequest
-	(*AddGroceryItemResponse)(nil),    // 17: pantrywise.grocery.v1.AddGroceryItemResponse
-	(*ListRecipesRequest)(nil),        // 18: pantrywise.grocery.v1.ListRecipesRequest
-	(*ListRecipesResponse)(nil),       // 19: pantrywise.grocery.v1.ListRecipesResponse
-	(*timestamppb.Timestamp)(nil),     // 20: google.protobuf.Timestamp
+	(*GroceryItem)(nil),               // 1: pantrywise.grocery.v1.GroceryItem
+	(*GroceryList)(nil),               // 2: pantrywise.grocery.v1.GroceryList
+	(*GroceryListItem)(nil),           // 3: pantrywise.grocery.v1.GroceryListItem
+	(*GroceryListRelatedRecipe)(nil),  // 4: pantrywise.grocery.v1.GroceryListRelatedRecipe
+	(*GetHouseholdRequest)(nil),       // 5: pantrywise.grocery.v1.GetHouseholdRequest
+	(*GetHouseholdResponse)(nil),      // 6: pantrywise.grocery.v1.GetHouseholdResponse
+	(*ListGroceryListsRequest)(nil),   // 7: pantrywise.grocery.v1.ListGroceryListsRequest
+	(*ListGroceryListsResponse)(nil),  // 8: pantrywise.grocery.v1.ListGroceryListsResponse
+	(*GetGroceryListRequest)(nil),     // 9: pantrywise.grocery.v1.GetGroceryListRequest
+	(*GetGroceryListResponse)(nil),    // 10: pantrywise.grocery.v1.GetGroceryListResponse
+	(*CreateGroceryListRequest)(nil),  // 11: pantrywise.grocery.v1.CreateGroceryListRequest
+	(*CreateGroceryListResponse)(nil), // 12: pantrywise.grocery.v1.CreateGroceryListResponse
+	(*AddGroceryItemRequest)(nil),     // 13: pantrywise.grocery.v1.AddGroceryItemRequest
+	(*AddGroceryItemResponse)(nil),    // 14: pantrywise.grocery.v1.AddGroceryItemResponse
+	(*ListRecipesRequest)(nil),        // 15: pantrywise.grocery.v1.ListRecipesRequest
+	(*ListRecipesResponse)(nil),       // 16: pantrywise.grocery.v1.ListRecipesResponse
+	(*timestamppb.Timestamp)(nil),     // 17: google.protobuf.Timestamp
 }
 var file_pantrywise_grocery_v1_grocery_proto_depIdxs = []int32{
-	20, // 0: pantrywise.grocery.v1.Household.created_at:type_name -> google.protobuf.Timestamp
-	20, // 1: pantrywise.grocery.v1.Household.updated_at:type_name -> google.protobuf.Timestamp
-	20, // 2: pantrywise.grocery.v1.Food.created_at:type_name -> google.protobuf.Timestamp
-	20, // 3: pantrywise.grocery.v1.Food.updated_at:type_name -> google.protobuf.Timestamp
-	20, // 4: pantrywise.grocery.v1.GroceryItem.purchase_date:type_name -> google.protobuf.Timestamp
-	20, // 5: pantrywise.grocery.v1.GroceryItem.created_at:type_name -> google.protobuf.Timestamp
-	20, // 6: pantrywise.grocery.v1.GroceryItem.updated_at:type_name -> google.protobuf.Timestamp
-	20, // 7: pantrywise.grocery.v1.GroceryList.created_at:type_name -> google.protobuf.Timestamp
-	20, // 8: pantrywise.grocery.v1.GroceryList.updated_at:type_name -> google.protobuf.Timestamp
-	4,  // 9: pantrywise.grocery.v1.GroceryList.items:type_name -> pantrywise.grocery.v1.GroceryListItem
-	20, // 10: pantrywise.grocery.v1.GroceryListItem.purchase_date:type_name -> google.protobuf.Timestamp
-	20, // 11: pantrywise.grocery.v1.GroceryListItem.created_at:type_name -> google.protobuf.Timestamp
-	20, // 12: pantrywise.grocery.v1.GroceryListItem.updated_at:type_name -> google.protobuf.Timestamp
-	5,  // 13: pantrywise.grocery.v1.GroceryListItem.related_recipes:type_name -> pantrywise.grocery.v1.GroceryListRelatedRecipe
-	20, // 14: pantrywise.grocery.v1.GroceryListRelatedRecipe.planned_date:type_name -> google.protobuf.Timestamp
-	0,  // 15: pantrywise.grocery.v1.GetHouseholdResponse.household:type_name -> pantrywise.grocery.v1.Household
-	1,  // 16: pantrywise.grocery.v1.ListFoodsResponse.foods:type_name -> pantrywise.grocery.v1.Food
-	3,  // 17: pantrywise.grocery.v1.ListGroceryListsResponse.grocery_lists:type_name -> pantrywise.grocery.v1.GroceryList
-	3,  // 18: pantrywise.grocery.v1.GetGroceryListResponse.grocery_list:type_name -> pantrywise.grocery.v1.GroceryList
-	3,  // 19: pantrywise.grocery.v1.CreateGroceryListResponse.grocery_list:type_name -> pantrywise.grocery.v1.GroceryList
-	20, // 20: pantrywise.grocery.v1.AddGroceryItemRequest.purchase_date:type_name -> google.protobuf.Timestamp
-	2,  // 21: pantrywise.grocery.v1.AddGroceryItemResponse.grocery_item:type_name -> pantrywise.grocery.v1.GroceryItem
-	5,  // 22: pantrywise.grocery.v1.ListRecipesResponse.recipes:type_name -> pantrywise.grocery.v1.GroceryListRelatedRecipe
-	6,  // 23: pantrywise.grocery.v1.GroceryService.GetHousehold:input_type -> pantrywise.grocery.v1.GetHouseholdRequest
-	8,  // 24: pantrywise.grocery.v1.GroceryService.ListFoods:input_type -> pantrywise.grocery.v1.ListFoodsRequest
-	10, // 25: pantrywise.grocery.v1.GroceryService.ListGroceryLists:input_type -> pantrywise.grocery.v1.ListGroceryListsRequest
-	12, // 26: pantrywise.grocery.v1.GroceryService.GetGroceryList:input_type -> pantrywise.grocery.v1.GetGroceryListRequest
-	14, // 27: pantrywise.grocery.v1.GroceryService.CreateGroceryList:input_type -> pantrywise.grocery.v1.CreateGroceryListRequest
-	16, // 28: pantrywise.grocery.v1.GroceryService.AddGroceryItem:input_type -> pantrywise.grocery.v1.AddGroceryItemRequest
-	18, // 29: pantrywise.grocery.v1.GroceryService.ListRecipes:input_type -> pantrywise.grocery.v1.ListRecipesRequest
-	7,  // 30: pantrywise.grocery.v1.GroceryService.GetHousehold:output_type -> pantrywise.grocery.v1.GetHouseholdResponse
-	9,  // 31: pantrywise.grocery.v1.GroceryService.ListFoods:output_type -> pantrywise.grocery.v1.ListFoodsResponse
-	11, // 32: pantrywise.grocery.v1.GroceryService.ListGroceryLists:output_type -> pantrywise.grocery.v1.ListGroceryListsResponse
-	13, // 33: pantrywise.grocery.v1.GroceryService.GetGroceryList:output_type -> pantrywise.grocery.v1.GetGroceryListResponse
-	15, // 34: pantrywise.grocery.v1.GroceryService.CreateGroceryList:output_type -> pantrywise.grocery.v1.CreateGroceryListResponse
-	17, // 35: pantrywise.grocery.v1.GroceryService.AddGroceryItem:output_type -> pantrywise.grocery.v1.AddGroceryItemResponse
-	19, // 36: pantrywise.grocery.v1.GroceryService.ListRecipes:output_type -> pantrywise.grocery.v1.ListRecipesResponse
-	30, // [30:37] is the sub-list for method output_type
-	23, // [23:30] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	17, // 0: pantrywise.grocery.v1.Household.created_at:type_name -> google.protobuf.Timestamp
+	17, // 1: pantrywise.grocery.v1.Household.updated_at:type_name -> google.protobuf.Timestamp
+	17, // 2: pantrywise.grocery.v1.GroceryItem.purchase_date:type_name -> google.protobuf.Timestamp
+	17, // 3: pantrywise.grocery.v1.GroceryItem.created_at:type_name -> google.protobuf.Timestamp
+	17, // 4: pantrywise.grocery.v1.GroceryItem.updated_at:type_name -> google.protobuf.Timestamp
+	17, // 5: pantrywise.grocery.v1.GroceryList.created_at:type_name -> google.protobuf.Timestamp
+	17, // 6: pantrywise.grocery.v1.GroceryList.updated_at:type_name -> google.protobuf.Timestamp
+	3,  // 7: pantrywise.grocery.v1.GroceryList.items:type_name -> pantrywise.grocery.v1.GroceryListItem
+	17, // 8: pantrywise.grocery.v1.GroceryListItem.purchase_date:type_name -> google.protobuf.Timestamp
+	17, // 9: pantrywise.grocery.v1.GroceryListItem.created_at:type_name -> google.protobuf.Timestamp
+	17, // 10: pantrywise.grocery.v1.GroceryListItem.updated_at:type_name -> google.protobuf.Timestamp
+	4,  // 11: pantrywise.grocery.v1.GroceryListItem.related_recipes:type_name -> pantrywise.grocery.v1.GroceryListRelatedRecipe
+	17, // 12: pantrywise.grocery.v1.GroceryListRelatedRecipe.planned_date:type_name -> google.protobuf.Timestamp
+	0,  // 13: pantrywise.grocery.v1.GetHouseholdResponse.household:type_name -> pantrywise.grocery.v1.Household
+	2,  // 14: pantrywise.grocery.v1.ListGroceryListsResponse.grocery_lists:type_name -> pantrywise.grocery.v1.GroceryList
+	2,  // 15: pantrywise.grocery.v1.GetGroceryListResponse.grocery_list:type_name -> pantrywise.grocery.v1.GroceryList
+	2,  // 16: pantrywise.grocery.v1.CreateGroceryListResponse.grocery_list:type_name -> pantrywise.grocery.v1.GroceryList
+	17, // 17: pantrywise.grocery.v1.AddGroceryItemRequest.purchase_date:type_name -> google.protobuf.Timestamp
+	1,  // 18: pantrywise.grocery.v1.AddGroceryItemResponse.grocery_item:type_name -> pantrywise.grocery.v1.GroceryItem
+	4,  // 19: pantrywise.grocery.v1.ListRecipesResponse.recipes:type_name -> pantrywise.grocery.v1.GroceryListRelatedRecipe
+	5,  // 20: pantrywise.grocery.v1.GroceryService.GetHousehold:input_type -> pantrywise.grocery.v1.GetHouseholdRequest
+	7,  // 21: pantrywise.grocery.v1.GroceryService.ListGroceryLists:input_type -> pantrywise.grocery.v1.ListGroceryListsRequest
+	9,  // 22: pantrywise.grocery.v1.GroceryService.GetGroceryList:input_type -> pantrywise.grocery.v1.GetGroceryListRequest
+	11, // 23: pantrywise.grocery.v1.GroceryService.CreateGroceryList:input_type -> pantrywise.grocery.v1.CreateGroceryListRequest
+	13, // 24: pantrywise.grocery.v1.GroceryService.AddGroceryItem:input_type -> pantrywise.grocery.v1.AddGroceryItemRequest
+	15, // 25: pantrywise.grocery.v1.GroceryService.ListRecipes:input_type -> pantrywise.grocery.v1.ListRecipesRequest
+	6,  // 26: pantrywise.grocery.v1.GroceryService.GetHousehold:output_type -> pantrywise.grocery.v1.GetHouseholdResponse
+	8,  // 27: pantrywise.grocery.v1.GroceryService.ListGroceryLists:output_type -> pantrywise.grocery.v1.ListGroceryListsResponse
+	10, // 28: pantrywise.grocery.v1.GroceryService.GetGroceryList:output_type -> pantrywise.grocery.v1.GetGroceryListResponse
+	12, // 29: pantrywise.grocery.v1.GroceryService.CreateGroceryList:output_type -> pantrywise.grocery.v1.CreateGroceryListResponse
+	14, // 30: pantrywise.grocery.v1.GroceryService.AddGroceryItem:output_type -> pantrywise.grocery.v1.AddGroceryItemResponse
+	16, // 31: pantrywise.grocery.v1.GroceryService.ListRecipes:output_type -> pantrywise.grocery.v1.ListRecipesResponse
+	26, // [26:32] is the sub-list for method output_type
+	20, // [20:26] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_pantrywise_grocery_v1_grocery_proto_init() }
@@ -1292,7 +1125,7 @@ func file_pantrywise_grocery_v1_grocery_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_pantrywise_grocery_v1_grocery_proto_rawDesc), len(file_pantrywise_grocery_v1_grocery_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   20,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

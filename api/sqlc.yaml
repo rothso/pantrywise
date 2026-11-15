@@ -4,6 +4,7 @@ sql:
     schema: "./migrations"
     queries:
       - "./internal/grocery/queries/grocery.sql"
+      - "./internal/food/queries/food.sql"
     gen:
       go:
         out: "./internal/db"
